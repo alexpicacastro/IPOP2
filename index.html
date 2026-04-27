@@ -1,693 +1,231 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Informe Personal d'Orientació Professional d'Àlex Pica Castro - Tècnic en Sistemes i Administració de Xarxes">
-    <meta name="author" content="Àlex Pica Castro">
-    <title>IPOP - Àlex Pica Castro</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Àlex Pica Castro - CV</title>
+
 <style>
-:root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f5f5f5;
-    --bg-card: #ffffff;
-    --border-card: #dddddd;
-    --text-primary: #222222;
-    --text-secondary: #555555;
-    --accent-primary: #2c3e50;
-}
-
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.6;
+    margin: 0;
+    background: #f4f4f4;
+    color: #222;
 }
 
 /* NAV */
-.nav {
-    background: #ffffff;
-    border-bottom: 1px solid #ddd;
-    padding: 1rem 2rem;
-}
-
-.nav-inner {
-    max-width: 1000px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav-logo {
-    font-weight: bold;
-    color: #2c3e50;
-    text-decoration: none;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 0.9rem;
-}
-
-/* MAIN */
-main {
-    max-width: 1000px;
-    margin: auto;
-    padding: 2rem;
-}
-
-section {
-    margin-bottom: 3rem;
-}
-
-/* TITULOS */
-h1, h2, h3 {
-    color: #2c3e50;
-}
-
-.section-header {
-    margin-bottom: 1.5rem;
-}
-
-/* HERO */
-.hero {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.hero h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-    color: var(--text-secondary);
-}
-
-/* BOTONES */
-.btn {
-    padding: 0.6rem 1.2rem;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-
-.btn-primary {
+nav {
     background: #2c3e50;
+    padding: 1rem;
     color: white;
 }
 
-.btn-outline {
-    border: 1px solid #ccc;
-    color: #333;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 0.9rem;
 }
 
-/* CARDS */
-.card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-card);
-    padding: 1.2rem;
-    margin-bottom: 1rem;
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    background: white;
 }
 
-/* GRID */
-.about-grid,
-.skills-grid,
-.languages-grid,
-.contact-grid,
-.cv-grid {
-    display: grid;
-    gap: 1rem;
+/* TITLES */
+h1 {
+    margin-bottom: 0.2rem;
 }
 
-.about-grid {
-    grid-template-columns: 1fr;
+h2 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 2rem;
 }
 
-.skills-grid {
-    grid-template-columns: 1fr 1fr;
-}
-
-.languages-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.contact-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.cv-grid {
-    grid-template-columns: 1fr 1fr;
-}
-
-/* TEXTOS */
+/* TEXT */
 p {
     font-size: 0.95rem;
 }
 
-/* LISTAS */
+/* LIST */
 ul {
-    padding-left: 1.2rem;
+    padding-left: 20px;
 }
 
-li {
-    margin-bottom: 0.4rem;
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    background: #2c3e50;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* CARDS */
+.card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* IMAGES */
+img {
+    max-width: 100%;
+    border: 1px solid #ccc;
+    margin-top: 10px;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 2rem;
-    border-top: 1px solid #ddd;
-    font-size: 0.85rem;
+    padding: 1rem;
+    font-size: 0.8rem;
     color: #777;
+    margin-top: 2rem;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 @media (max-width: 768px) {
-    .skills-grid,
-    .cv-grid {
+    .grid {
         grid-template-columns: 1fr;
-    }
-
-    .nav-links {
-        display: none;
     }
 }
 </style>
+
 </head>
 
 <body>
 
-    <!-- Background Effects -->
-    <div class="bg-effects">
-        <div class="bg-orb"></div>
-        <div class="bg-orb"></div>
-        <div class="bg-orb"></div>
-    </div>
+<nav>
+    <a href="#about">Sobre mi</a>
+    <a href="#education">Formació</a>
+    <a href="#experience">Experiència</a>
+    <a href="#projects">Projectes</a>
+    <a href="#contact">Contacte</a>
+</nav>
 
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">AP</a>
-            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">Sobre mi</a></li>
-                <li><a href="#education">Formació</a></li>
-                <li><a href="#experience">Experiència</a></li>
-                <li><a href="#skills">Habilitats</a></li>
-                <li><a href="#certificates">Certificats</a></li>
-                <li><a href="projectes.html">Projectes</a></li>
-                <li><a href="#contact">Contacte</a></li>
-            </ul>
-        </div>
-    </nav>
+<div class="container">
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-graduation-cap"></i>
-                    CFGS ASIX — En curs
-                </div>
-                <h1>
-                    Sóc <span class="gradient-text">Àlex Pica Castro</span><br>
-                    Tècnic en Sistemes
-                </h1>
-                <p class="hero-subtitle">
-                    Persona proactiva, responsable i amb gran interès en l'administració de sistemes, xarxes i
-                    ciberseguretat. Actualment cursant ASIX a l'Institut Sapalomera.
-                </p>
-                <div class="hero-links">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i> Contacta'm
-                    </a>
-                    <a href="projectes.html" class="btn btn-outline">
-                        <i class="fas fa-folder-open"></i> Projectes
-                    </a>
-                    <a href="#cv" class="btn btn-outline">
-                        <i class="fas fa-file-alt"></i> Veure CV
-                    </a>
-                </div>
-            </div>
-        </section>
+<h1>Àlex Pica Castro</h1>
+<p>Tècnic en Sistemes i Administració de Xarxes</p>
 
-        <!-- About Section -->
-        <section id="about" class="reveal">
-            <div class="section-header">
-                <div class="section-icon"><i class="fas fa-user"></i></div>
-                <h2>Qui soc jo?</h2>
-                <p>Presentació personal i informació de contacte</p>
-            </div>
-            <div class="about-grid">
-                <div class="card about-card about-intro">
-                    <div class="card-label">Presentació</div>
-                    <p>Em dic Àlex Pica Castro i sóc tècnic en Sistemes Microinformàtics i Xarxes amb formació en
-                        l'administració de sistemes informàtics. Després d'haver fet el grau mitjà en SMX, actualment
-                        estic cursant el grau superior en Administració de Sistemes Informàtics en Xarxa (ASIX). Persona
-                        proactiva, responsable i amb gran interès en l'administració de sistemes, xarxes i
-                        ciberseguretat.</p>
-                </div>
-        </section>
+<a href="CV_Alex_Pica.pdf" class="btn" download>Descarregar CV (PDF)</a>
 
-        <!-- Education Section -->
-        <section id="education" class="reveal">
-            <div class="section-header">
-                <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
-                <h2>Formació Acadèmica</h2>
-                <p>El meu recorregut educatiu</p>
-            </div>
-            <div class="card">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-period">2023 — 2026</div>
-                        <div class="timeline-title">CFGS Administració de Sistemes Informàtics en Xarxa (ASIX)</div>
-                        <div class="timeline-subtitle">Institut Sapalomera</div>
-                        <span class="timeline-badge">EQF 5 — En curs</span>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-period">2021 — 2023</div>
-                        <div class="timeline-title">CFGM Sistemes Microinformàtics i Xarxes (SMX)</div>
-                        <div class="timeline-subtitle">Institut Sa Palomera</div>
-                        <span class="timeline-badge">EQF 4</span>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-period">2017 — 2021</div>
-                        <div class="timeline-title">Educació Secundària Obligatòria (ESO)</div>
-                        <div class="timeline-subtitle">IES Serrallarga</div>
-                        <span class="timeline-badge">EQF 3</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- SOBRE MI -->
+<h2 id="about">Sobre mi</h2>
+<p>
+Tècnic en Sistemes Microinformàtics i Xarxes amb formació en Administració de Sistemes Informàtics en Xarxa (ASIX).
+Persona responsable, amb interès en sistemes, xarxes i ciberseguretat.
+</p>
 
-        <!-- Experience Section -->
-        <section id="experience" class="reveal">
-            <div class="section-header">
-                <div class="section-icon"><i class="fas fa-briefcase"></i></div>
-                <h2>Experiència Laboral</h2>
-                <p>On he posat en pràctica els meus coneixements</p>
-            </div>
-            <div class="card experience-card">
-                <h3>Tècnic en Sistemes</h3>
-                <div class="role-company">
-                    <i class="fas fa-building"></i> Institut S'Agulla, Blanes — Pràctiques (2022–2023)
-                </div>
-                <ul>
-                    <li>Instal·lació i configuració de sistemes operatius Windows i Linux</li>
-                    <li>Manteniment i administració de xarxes locals</li>
-                    <li>Resolució de problemes de hardware i software</li>
-                </ul>
-            </div>
-            <div class="card experience-card">
-                <h3>Desenvolupador i Tècnic de Sistemes</h3>
-                <div class="role-company">
-                    <i class="fas fa-building"></i> Orbitwave, Portugal — Erasmus+ (2024–2025)
-                </div>
-                <ul>
-                    <li>Disseny i implementació d'un programari per a l'optimització i gestió de sistemes informàtics
-                    </li>
-                    <li>Administració avançada d'entorns híbrids Windows i Linux Server</li>
-                    <li>Planificació i manteniment proactiu de la infraestructura de xarxa</li>
-                    <li>Suport tècnic especialitzat i resolució d'incidències d'alt nivell</li>
-                </ul>
-            </div>
-        </section>
+<!-- FORMACIO -->
+<h2 id="education">Formació</h2>
+<ul>
+<li>CFGS ASIX — Institut Sapalomera (2023–2026)</li>
+<li>CFGM SMX — Institut Sa Palomera (2021–2023)</li>
+<li>ESO — IES Serrallarga (2017–2021)</li>
+</ul>
 
-        <!-- Professional Profile -->
-        <section id="profile" class="reveal">
-            <div class="section-header">
-                <div class="section-icon"><i class="fas fa-id-card"></i></div>
-                <h2>Perfil Professional</h2>
-                <p>Identificació del títol i competència general</p>
-            </div>
-            <div class="profile-grid">
-                <div class="card profile-card">
-                    <div class="profile-icon">🎓</div>
-                    <h3>Títol</h3>
-                    <p>Administració de sistemes informàtics en xarxa</p>
-                </div>
-                <div class="card profile-card">
-                    <div class="profile-icon">📊</div>
-                    <h3>Nivell</h3>
-                    <p>Formació professional de grau superior</p>
-                </div>
-                <div class="card profile-card">
-                    <div class="profile-icon">💻</div>
-                    <h3>Família professional</h3>
-                    <p>Informàtica i comunicacions</p>
-                </div>
-                <div class="card profile-card">
-                    <div class="profile-icon">⏱️</div>
-                    <h3>Durada</h3>
-                    <p>2.000 hores</p>
-                </div>
-            </div>
-            <div class="card" style="margin-top: 1.5rem; text-align: center;">
-                <div class="card-label"
-                    style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-secondary); margin-bottom: 0.75rem;">
-                    Competència general</div>
-                <p
-                    style="color: var(--text-secondary); font-size: 1rem; line-height: 1.8; max-width: 700px; margin: 0 auto;">
-                    Configurar, administrar i mantenir sistemes informàtics, garantint la funcionalitat, la integritat
-                    dels recursos i serveis del sistema, amb la qualitat exigida i complint la reglamentació vigent.</p>
-            </div>
-        </section>
+<!-- EXPERIENCIA -->
+<h2 id="experience">Experiència</h2>
 
-        <!-- Skills Section -->
-        <section id="skills" class="reveal">
-            <div class="section-header">
-                <div class="section-icon"><i class="fas fa-code"></i></div>
-                <h2>Competències i Habilitats</h2>
-                <p>Les meves capacitats tècniques i personals</p>
-            </div>
-            <div class="skills-grid">
-                <div class="card skill-category">
-                    <h3><i class="fas fa-laptop-code" style="color: var(--accent-secondary);"></i> Aptituds Tècniques
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag"><i class="fas fa-code"></i> Programació</span>
-                        <span class="skill-tag"><i class="fas fa-database"></i> Base de dades</span>
-                        <span class="skill-tag"><i class="fab fa-windows"></i> Windows</span>
-                        <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
-                        <span class="skill-tag"><i class="fas fa-file-word"></i> Ofimàtica Office</span>
-                        <span class="skill-tag"><i class="fas fa-network-wired"></i> Xarxes</span>
-                        <span class="skill-tag"><i class="fas fa-users"></i> Treball en equip</span>
-                    </div>
-                </div>
-                <div class="card skill-category">
-                    <h3><i class="fas fa-brain" style="color: var(--accent-secondary);"></i> Habilitats Personals</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag"><i class="fas fa-check-circle"></i> Organitzat</span>
-                        <span class="skill-tag"><i class="fas fa-eye"></i> Atent</span>
-                        <span class="skill-tag"><i class="fas fa-shield-alt"></i> Responsable</span>
-                        <span class="skill-tag"><i class="fas fa-hammer"></i> Treballador</span>
-                        <span class="skill-tag"><i class="fas fa-heart"></i> Empatia</span>
-                        <span class="skill-tag"><i class="fas fa-smile"></i> Amabilitat</span>
-                        <span class="skill-tag"><i class="fas fa-handshake"></i> Respecte</span>
-                        <span class="skill-tag"><i class="fas fa-comments"></i> Comunicació</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="card">
+<strong>Tècnic en Sistemes — Pràctiques</strong><br>
+Institut S'Agulla (2022–2023)
+<ul>
+<li>Instal·lació de sistemes Windows i Linux</li>
+<li>Manteniment de xarxes</li>
+<li>Resolució d'incidències</li>
+</ul>
+</div>
 
-        <!-- Languages Section -->
-        <section id="languages" class="reveal">
-            <div class="section-header">
-                <div class="section-icon"><i class="fas fa-globe"></i></div>
-                <h2>Idiomes</h2>
-                <p>Competències lingüístiques</p>
-            </div>
-            <div class="languages-grid">
-                <div class="card language-card">
-                    <div class="language-name">🇪🇸 Castellà</div>
-                    <span class="language-level level-native">Natiu</span>
-                    <div class="language-bar-container">
-                        <div class="language-bar bar-native"></div>
-                    </div>
-                </div>
-                <div class="card language-card">
-                    <div class="language-name">🏴 Català</div>
-                    <span class="language-level level-native">Natiu</span>
-                    <div class="language-bar-container">
-                        <div class="language-bar bar-native"></div>
-                    </div>
-                </div>
-                <div class="card language-card">
-                    <div class="language-name">🇬🇧 Anglès</div>
-                    <span class="language-level level-b1">Mitjà — B1</span>
-                    <div class="language-bar-container">
-                        <div class="language-bar bar-b1"></div>
-                    </div>
-                </div>
-                <div class="card language-card">
-                    <div class="language-name">🇵🇹 Portuguès</div>
-                    <span class="language-level level-basic">Baix</span>
-                    <div class="language-bar-container">
-                        <div class="language-bar bar-basic"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="card">
+<strong>Desenvolupador i Sistemes — Erasmus+</strong><br>
+Orbitwave, Portugal (2024–2025)
+<ul>
+<li>Desenvolupament de software</li>
+<li>Administració Windows i Linux Server</li>
+<li>Infraestructura de xarxa</li>
+</ul>
+</div>
 
-        <!-- Certificates Section -->
-        <section id="certificates" class="reveal">
-            <div class="section-header">
-                <div class="section-icon"><i class="fas fa-certificate"></i></div>
-                <h2>Certificats</h2>
-                <p>Formació complementària i certificacions</p>
-            </div>
-            <div class="cert-grid">
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fab fa-linux"></i></div>
-                    <span class="cert-name">Administració Bàsica de Sistemes Linux</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
-                    <span class="cert-name">Introducció a les Xarxes</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fab fa-windows"></i></div>
-                    <span class="cert-name">Administració Bàsica de Sistemes en Windows 10</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fas fa-code"></i></div>
-                    <span class="cert-name">Introducció a HTML i a CSS</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fas fa-desktop"></i></div>
-                    <span class="cert-name">Elaboració de Presentacions amb PowerPoint</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fas fa-envelope-open-text"></i></div>
-                    <span class="cert-name">Gestió de Correu i Agenda amb Outlook</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fas fa-database"></i></div>
-                    <span class="cert-name">Elaboració d'Aplicacions amb Bases de Dades amb Access</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fas fa-table"></i></div>
-                    <span class="cert-name">Elaboració Avançada de Fulls de Càlcul amb Excel</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fas fa-file-word"></i></div>
-                    <span class="cert-name">Elaboració Avançada de Documents de Text amb Word</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fas fa-server"></i></div>
-                    <span class="cert-name">DHCP i DNS — Implantació amb Windows Server 2019</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fas fa-globe"></i></div>
-                    <span class="cert-name">Serveis Web — Implantació amb IIS</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fas fa-cogs"></i></div>
-                    <span class="cert-name">Administració Bàsica de Windows Server 2019</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fas fa-hashtag"></i></div>
-                    <span class="cert-name">Principis de la Programació en C#</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fas fa-gamepad"></i></div>
-                    <span class="cert-name">Introducció a la Programació i al Motor de Unity</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
-                    <span class="cert-name">Introducció als Firewalls de Xarxa amb pfSense</span>
-                </div>
-            </div>
-        </section>
+<!-- PROJECTES -->
+<h2 id="projects">Projectes</h2>
 
-        <!-- Objectives Section -->
-        <section id="objectives" class="reveal">
-            <div class="section-header">
-                <div class="section-icon"><i class="fas fa-bullseye"></i></div>
-                <h2>Objectius Professionals</h2>
-                <p>On vull arribar professionalment</p>
-            </div>
-            <div class="card objectives-card">
-                <h3>🎯 Meta</h3>
-                <p>Especialitzar-me en administració de sistemes i xarxes amb l'objectiu de treballar com a
-                    administrador de sistemes o tècnic de xarxes dins de mitjanes o grans empresas.</p>
-                <h3>🗺️ Itinerari</h3>
-                <p>El pla actual es centra en finalitzar amb èxit el CFGS d'ASIX el 2026 per consolidar el perfil
-                    tècnic.</p>
-            </div>
-        </section>
+<div class="card">
+<strong>Gestió Hospitalària (Python + PostgreSQL)</strong>
+<p>
+Sistema complet amb gestió de pacients, metges, visites, operacions i exportació XML.
+Inclou autenticació i rols.
+</p>
 
-        <!-- CV Section -->
-        <section id="cv" class="reveal">
-            <div class="section-header">
-                <div class="section-icon"><i class="fas fa-file-alt"></i></div>
-                <h2>Currículum Vitae</h2>
-                <p>Fes clic per veure en gran</p>
-            </div>
-            <div class="cv-grid">
-                <div class="card cv-card" onclick="openLightbox('CurriulumCatalaCV.jpg')">
-                    <img src="CurriulumCatalaCV.jpg" alt="CV en Català" loading="lazy">
-                    <h3>CV Català</h3>
-                </div>
-                <div class="card cv-card" onclick="openLightbox('EuropassCV.jpg')">
-                    <img src="EuropassCV.jpg" alt="CV Europass" loading="lazy">
-                    <h3>CV Europass</h3>
-                </div>
-            </div>
-        </section>
+<a href="ProjecteHospital.zip" class="btn">Descarregar projecte</a>
 
-        <!-- Contact Section -->
-        <section id="contact" class="reveal">
-            <div class="section-header">
-                <div class="section-icon"><i class="fas fa-paper-plane"></i></div>
-                <h2>Contacte</h2>
-                <p>No dubtis en contactar-me</p>
-            </div>
-            <div class="contact-grid">
-                <a href="mailto:a.pica@sapalomera.cat" class="card contact-card">
-                    <div class="contact-icon email"><i class="fas fa-envelope"></i></div>
-                    <div>
-                        <div class="contact-label">Correu Institucional</div>
-                        <div class="contact-value">a.pica@sapalomera.cat</div>
-                    </div>
-                </a>
-                <a href="mailto:alexpicacastro@gmail.com" class="card contact-card">
-                    <div class="contact-icon email"><i class="fas fa-envelope"></i></div>
-                    <div>
-                        <div class="contact-label">Correu Personal</div>
-                        <div class="contact-value">alexpicacastro@gmail.com</div>
-                    </div>
-                </a>
-                <a href="tel:+34640908980" class="card contact-card">
-                    <div class="contact-icon phone"><i class="fas fa-phone"></i></div>
-                    <div>
-                        <div class="contact-label">Telèfon</div>
-                        <div class="contact-value">640 908 980</div>
-                    </div>
-                </a>
-                <a href="https://github.com/alexpicacastro" target="_blank" class="card contact-card">
-                    <div class="contact-icon github"><i class="fab fa-github"></i></div>
-                    <div>
-                        <div class="contact-label">GitHub</div>
-                        <div class="contact-value">alexpicacastro</div>
-                    </div>
-                </a>
-                <a href="https://www.linkedin.com/in/alexpicacastro/" target="_blank" class="card contact-card">
-                    <div class="contact-icon linkedin"><i class="fab fa-linkedin"></i></div>
-                    <div>
-                        <div class="contact-label">LinkedIn</div>
-                        <div class="contact-value">alexpicacastro</div>
-                    </div>
-                </a>
-                <a href="https://apica3.wixsite.com/website" target="_blank" class="card contact-card">
-                    <div class="contact-icon web"><i class="fas fa-globe"></i></div>
-                    <div>
-                        <div class="contact-label">Web Personal</div>
-                        <div class="contact-value">apica3.wixsite.com</div>
-                    </div>
-                </a>
-            </div>
-        </section>
-    </main>
+<img src="img/hospital_main.png" alt="Projecte Hospital">
+</div>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 <span class="footer-name">Àlex Pica Castro</span> — IPOP · Informe Personal d'Orientació Professional
-        </p>
-    </footer>
+<div class="card">
+<strong>Web Personal (Wix)</strong>
+<p>Web personal com a portafoli professional.</p>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <button class="lightbox-close" onclick="closeLightbox()">
-            <i class="fas fa-times"></i>
-        </button>
-        <img id="lightbox-img" src="" alt="CV ampliada">
-    </div>
+<a href="https://apica3.wixsite.com/website" class="btn" target="_blank">Veure web</a>
+</div>
 
-    <script>
-        // ===== Mobile Navigation =====
-        function toggleNav() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
+<!-- HABILITATS -->
+<h2>Habilitats</h2>
+<div class="grid">
+<div>
+<ul>
+<li>Linux / Windows</li>
+<li>Xarxes</li>
+<li>Base de dades</li>
+<li>Programació</li>
+</ul>
+</div>
+<div>
+<ul>
+<li>Treball en equip</li>
+<li>Responsable</li>
+<li>Comunicació</li>
+<li>Organització</li>
+</ul>
+</div>
+</div>
 
-        // Close nav when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('active');
-            });
-        });
+<!-- IDIOMES -->
+<h2>Idiomes</h2>
+<ul>
+<li>Català — Natiu</li>
+<li>Castellà — Natiu</li>
+<li>Anglès — B1</li>
+<li>Portuguès — Bàsic</li>
+</ul>
 
-        // ===== Scroll Reveal =====
-        const revealElements = document.querySelectorAll('.reveal');
+<!-- CONTACTE -->
+<h2 id="contact">Contacte</h2>
+<p>Email: alexpicacastro@gmail.com</p>
+<p>Telèfon: 640 908 980</p>
+<p>GitHub: github.com/alexpicacastro</p>
+<p>LinkedIn: linkedin.com/in/alexpicacastro</p>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
+</div>
 
-        revealElements.forEach(el => observer.observe(el));
+<footer>
+© 2026 Àlex Pica Castro
+</footer>
 
-        // ===== Lightbox =====
-        function openLightbox(src) {
-            const lightbox = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            img.src = src;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // Close with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
-
-        // ===== Navbar background on scroll =====
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(10, 14, 23, 0.95)';
-            } else {
-                nav.style.background = 'rgba(10, 14, 23, 0.85)';
-            }
-        });
-    </script>
 </body>
-
 </html>
