@@ -1,435 +1,159 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projectes d'Àlex Pica Castro - Gestió hospitalària amb Python i PostgreSQL, Web personal amb Wix">
-    <meta name="author" content="Àlex Pica Castro">
-    <title>Projectes — Àlex Pica Castro</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projectes - Àlex Pica Castro</title>
+
 <style>
-:root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f5f5f5;
-    --bg-card: #ffffff;
-    --border-card: #dddddd;
-    --text-primary: #222222;
-    --text-secondary: #555555;
-    --accent-primary: #2c3e50;
-}
-
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.6;
+    margin: 0;
+    background: #f4f4f4;
+    color: #222;
 }
 
 /* NAV */
-.nav {
-    background: #ffffff;
-    border-bottom: 1px solid #ddd;
-    padding: 1rem 2rem;
+nav {
+    background: #2c3e50;
+    padding: 1rem;
 }
 
-.nav-inner {
-    max-width: 1000px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav-logo {
-    font-weight: bold;
+nav a {
+    color: white;
     text-decoration: none;
-    color: #2c3e50;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
+    margin-right: 15px;
     font-size: 0.9rem;
 }
 
-/* MAIN */
-main {
-    max-width: 1000px;
+/* CONTAINER */
+.container {
+    max-width: 900px;
     margin: auto;
     padding: 2rem;
+    background: white;
 }
 
-section {
-    margin-bottom: 3rem;
-}
-
-/* HERO */
-.hero {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.hero h1 {
-    font-size: 2rem;
+/* TITLES */
+h1 {
     margin-bottom: 1rem;
 }
 
-.hero-subtitle {
-    color: var(--text-secondary);
+h2 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 2rem;
 }
 
-/* TITULOS */
-h1, h2, h3 {
-    color: #2c3e50;
-}
-
-/* CARDS */
+/* CARD */
 .card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-card);
-    padding: 1.5rem;
-    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-/* BOTONES */
+/* TEXT */
+p {
+    font-size: 0.95rem;
+}
+
+/* BUTTON */
 .btn {
-    padding: 0.6rem 1.2rem;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-
-.btn-primary {
+    display: inline-block;
     background: #2c3e50;
     color: white;
+    padding: 8px 14px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 10px;
 }
 
-.btn-outline {
-    border: 1px solid #ccc;
-    color: #333;
-}
-
-/* GRID */
-.project-header-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
-.tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tech-item {
-    border: 1px solid #ccc;
-    padding: 0.4rem 0.8rem;
-    font-size: 0.85rem;
-}
-
-/* IMAGEN */
-.project-image-container img {
+/* IMAGE */
+img {
     width: 100%;
+    margin-top: 10px;
     border: 1px solid #ccc;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 2rem;
-    border-top: 1px solid #ddd;
-    font-size: 0.85rem;
+    padding: 1rem;
+    font-size: 0.8rem;
     color: #777;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .project-header-content {
-        grid-template-columns: 1fr;
-    }
-
-    .nav-links {
-        display: none;
-    }
+    margin-top: 2rem;
 }
 </style>
 </head>
+
 <body>
 
-    <!-- Background Effects -->
-    <div class="bg-effects">
-        <div class="bg-orb"></div>
-        <div class="bg-orb"></div>
-        <div class="bg-orb"></div>
-    </div>
+<nav>
+    <a href="index.html">Inici</a>
+    <a href="projectes.html">Projectes</a>
+    <a href="index.html#contact">Contacte</a>
+</nav>
 
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">AP</a>
-            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Inici</a></li>
-                <li><a href="projectes.html" class="active">Projectes</a></li>
-                <li><a href="#hospital">Hospital</a></li>
-                <li><a href="#wix">Web Wix</a></li>
-                <li><a href="index.html#contact">Contacte</a></li>
-            </ul>
-        </div>
-    </nav>
+<div class="container">
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-folder-open"></i>
-                    Portafoli de projectes
-                </div>
-                <h1>Els meus <span class="gradient-text">Projectes</span></h1>
-                <p class="hero-subtitle">
-                    Projectes realitzats durant la formació en ASIX que demostren les meves competències en programació, bases de dades, sistemes i disseny web.
-                </p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="#hospital" class="btn btn-hospital">
-                        <i class="fas fa-hospital"></i> Projecte Hospital
-                    </a>
-                    <a href="#wix" class="btn btn-wix">
-                        <i class="fas fa-globe"></i> Web Personal Wix
-                    </a>
-                </div>
-            </div>
-        </section>
+<h1>Projectes</h1>
+<p>Projectes realitzats durant la formació en ASIX.</p>
 
-        <!-- ===== PROJECT 1: HOSPITAL ===== -->
-        <section id="hospital" class="project-section reveal">
-            <div class="card project-hero">
-                <div class="project-hero-gradient hospital"></div>
-                <div class="project-header-content" style="padding-top: 0.5rem;">
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="project-tag tag-python"><i class="fab fa-python"></i> Python</span>
-                            <span class="project-tag tag-postgresql"><i class="fas fa-database"></i> PostgreSQL</span>
-                            <span class="project-tag tag-security"><i class="fas fa-lock"></i> Criptografia</span>
-                            <span class="project-tag tag-xml"><i class="fas fa-file-code"></i> XML</span>
-                        </div>
-                        <h2>🏥 Projecte Hospital</h2>
-                        <p>
-                            Sistema complet de gestió hospitalària desenvolupat amb <strong>Python</strong> i <strong>PostgreSQL</strong>. 
-                            Inclou gestió de pacients, metges, infermers, visites, operacions, quiròfans, habitacions, 
-                            medicaments, generació d'informes i exportació de dades en XML. 
-                            Amb autenticació xifrada mitjançant <strong>Fernet</strong> i sistema de rols amb permisos.
-                        </p>
-                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                            <a href="ProjecteHospital.zip" download class="btn btn-hospital">
-                                <i class="fas fa-download"></i> Descarregar Codi
-                            </a>
-                            <a href="documentacio.html" class="btn btn-outline">
-                                <i class="fas fa-book-open"></i> Veure Documentació
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-image-container" onclick="openLightbox('img/hospital_main.png')">
-                        <img src="img/hospital_main.png" alt="Menú principal del Projecte Hospital" loading="lazy">
-                    </div>
-                </div>
-            </div>
+<!-- PROJECTE HOSPITAL -->
+<h2>Gestió Hospitalària (Python + PostgreSQL)</h2>
 
-            <!-- Features -->
-            <div class="features-grid">
-                <div class="card feature-card">
-                    <div class="feature-icon green"><i class="fas fa-user-md"></i></div>
-                    <h3>Gestió de personal</h3>
-                    <p>Alta de metges, infermers i personal vari amb assignació de rols PostgreSQL i permisos específics.</p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon blue"><i class="fas fa-procedures"></i></div>
-                    <h3>Pacients i visites</h3>
-                    <p>Registre de pacients, historial de visites, diagnòstics, medicaments receptats i ingressos hospitalaris.</p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon purple"><i class="fas fa-syringe"></i></div>
-                    <h3>Operacions i quiròfans</h3>
-                    <p>Planificació d'operacions amb reserva de quiròfans, equipament mèdic i assignació de personal.</p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon amber"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Seguretat i xifrat</h3>
-                    <p>Autenticació segura amb credencials xifrades amb Fernet. Creació de rols i permisos a PostgreSQL.</p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon pink"><i class="fas fa-chart-bar"></i></div>
-                    <h3>Informes i rànkings</h3>
-                    <p>Rànking de metges per visites, rànking de malalties, informes de personal i plantes hospitalàries.</p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon cyan"><i class="fas fa-file-export"></i></div>
-                    <h3>Exportació XML</h3>
-                    <p>Generació de fitxers XML amb dades de visites en un rang de dates, usant funcions XML de PostgreSQL.</p>
-                </div>
-            </div>
+<div class="card">
+<p>
+Aplicació completa de gestió hospitalària desenvolupada amb Python i PostgreSQL.
+Inclou gestió de pacients, metges, visites, operacions, habitacions i medicaments.
+També incorpora sistema d’autenticació amb xifrat i control de permisos.
+</p>
 
-            <!-- Tech Stack -->
-            <div class="card" style="margin-top: 1.5rem;">
-                <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">
-                    <i class="fas fa-tools" style="color: var(--accent-secondary);"></i> Stack Tecnològic
-                </h3>
-                <div class="tech-stack">
-                    <span class="tech-item"><i class="fab fa-python"></i> Python 3.11</span>
-                    <span class="tech-item"><i class="fas fa-database"></i> PostgreSQL</span>
-                    <span class="tech-item"><i class="fas fa-plug"></i> psycopg2</span>
-                    <span class="tech-item"><i class="fas fa-lock"></i> Fernet (cryptography)</span>
-                    <span class="tech-item"><i class="fas fa-file-code"></i> lxml / etree</span>
-                    <span class="tech-item"><i class="fas fa-file-csv"></i> CSV</span>
-                    <span class="tech-item"><i class="fas fa-random"></i> Faker (Dummy Data)</span>
-                    <span class="tech-item"><i class="fas fa-server"></i> Alta disponibilitat</span>
-                </div>
-            </div>
+<ul>
+<li>Gestió de pacients i historial clínic</li>
+<li>Planificació d'operacions</li>
+<li>Control de rols i seguretat</li>
+<li>Exportació de dades en XML</li>
+</ul>
 
-        </section>
+<a href="ProjecteHospital.zip" class="btn">Descarregar projecte</a>
+<a href="documentacio.html" class="btn">Veure documentació</a>
 
-        <!-- ===== PROJECT 2: WIX WEBSITE ===== -->
-        <section id="wix" class="project-section reveal">
-            <div class="card project-hero">
-                <div class="project-hero-gradient wix"></div>
-                <div class="project-header-content" style="padding-top: 0.5rem;">
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="project-tag tag-wix"><i class="fab fa-wix"></i> Wix</span>
-                            <span class="project-tag tag-web"><i class="fas fa-palette"></i> Disseny Web</span>
-                            <span class="project-tag tag-design"><i class="fas fa-mobile-alt"></i> Responsive</span>
-                        </div>
-                        <h2>🌐 Web Personal — Wix</h2>
-                        <p>
-                            Pàgina web personal creada amb la plataforma <strong>Wix</strong>, dissenyada com a portafoli 
-                            i carta de presentació professional. Inclou informació personal, formació, habilitats 
-                            i experiència amb un disseny modern, atractiu i adaptat a dispositius mòbils.
-                        </p>
-                        <a href="https://apica3.wixsite.com/website" target="_blank" class="btn btn-wix">
-                            <i class="fas fa-external-link-alt"></i> Visitar la web
-                        </a>
-                    </div>
-                    <div class="project-image-container">
-                        <iframe 
-                            src="https://apica3.wixsite.com/website" 
-                            style="width: 100%; height: 350px; border: none; border-radius: 8px; pointer-events: none;"
-                            loading="lazy"
-                            title="Web Wix d'Àlex Pica"
-                        ></iframe>
-                    </div>
-                </div>
-            </div>
+<img src="img/hospital_main.png" alt="Projecte hospital">
+</div>
 
-            <!-- Features -->
-            <div class="features-grid">
-                <div class="card feature-card">
-                    <div class="feature-icon pink"><i class="fas fa-paint-brush"></i></div>
-                    <h3>Disseny visual</h3>
-                    <p>Disseny modern i professional amb una estètica cuidada, colors harmoniosos i tipografia elegant.</p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon purple"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Responsive</h3>
-                    <p>Adaptat a tots els dispositius: mòbils, tauletes i escriptoris per una experiència fluida.</p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon cyan"><i class="fas fa-id-badge"></i></div>
-                    <h3>Portafoli professional</h3>
-                    <p>Presentació personal com a carta de presentació amb formació, habilitats i objectius professionals.</p>
-                </div>
-            </div>
-        </section>
+<!-- STACK -->
+<div class="card">
+<strong>Tecnologies utilitzades:</strong>
+<ul>
+<li>Python</li>
+<li>PostgreSQL</li>
+<li>psycopg2</li>
+<li>XML</li>
+<li>Fernet (criptografia)</li>
+</ul>
+</div>
 
-    </main>
+<!-- PROJECTE WEB -->
+<h2>Web personal (Wix)</h2>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 <span class="footer-name">Àlex Pica Castro</span> — IPOP · Informe Personal d'Orientació Professional</p>
-        <p style="margin-top: 0.5rem;">
-            <a href="index.html" style="color: var(--accent-secondary); text-decoration: none; font-size: 0.85rem;">
-                <i class="fas fa-arrow-left"></i> Tornar a l'inici
-            </a>
-        </p>
-    </footer>
+<div class="card">
+<p>
+Web personal desenvolupada amb Wix com a portafoli professional.
+Inclou informació sobre formació, habilitats i experiència.
+Dissenyada per ser clara, accessible i adaptable a dispositius mòbils.
+</p>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <button class="lightbox-close" onclick="closeLightbox()">
-            <i class="fas fa-times"></i>
-        </button>
-        <img id="lightbox-img" src="" alt="Captura ampliada">
-    </div>
+<a href="https://apica3.wixsite.com/website" target="_blank" class="btn">
+Visitar web
+</a>
+</div>
 
-    <script>
-        // ===== Mobile Navigation =====
-        function toggleNav() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
+</div>
 
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('active');
-            });
-        });
+<footer>
+© 2026 Àlex Pica Castro
+</footer>
 
-        // ===== Scroll Reveal =====
-        const revealElements = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        revealElements.forEach(el => observer.observe(el));
-
-        // ===== Lightbox =====
-        function openLightbox(src) {
-            const lightbox = document.getElementById('lightbox');
-            document.getElementById('lightbox-img').src = src;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
-
-        // ===== Navbar background on scroll =====
-        window.addEventListener('scroll', () => {
-            document.getElementById('nav').style.background =
-                window.scrollY > 50 ? 'rgba(10, 14, 23, 0.95)' : 'rgba(10, 14, 23, 0.85)';
-        });
-    </script>
 </body>
 </html>
