@@ -55,14 +55,7 @@
             overflow-x: hidden;
         }
 
-        /* ===== Background Effects ===== */
-        .bg-effects {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            background: radial-gradient(circle at 50% -20%, #1e293b 0%, #0f172a 100%);
-        }
+        /* Navigation */
 
         /* ===== Navigation ===== */
         .nav {
@@ -71,9 +64,7 @@
             left: 0;
             right: 0;
             z-index: 100;
-            padding: 1rem 2rem;
-            backdrop-filter: blur(20px);
-            background: rgba(10, 14, 23, 0.85);
+            background: rgba(15, 23, 42, 0.95);
             border-bottom: 1px solid var(--border-card);
             transition: var(--transition);
         }
@@ -149,21 +140,7 @@
         }
 
         .hero-content {
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            background: rgba(59, 130, 246, 0.05);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            color: var(--accent-secondary);
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
+            /* Eliminada animació per semblar més natural */
         }
 
         .hero h1 {
@@ -214,7 +191,6 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-1px);
             background: var(--accent-secondary);
         }
 
@@ -227,20 +203,9 @@
         .btn-outline:hover {
             background: rgba(59, 130, 246, 0.05);
             border-color: var(--accent-primary);
-            transform: translateY(-1px);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        /* Eliminades animacions de fade in */
 
         /* ===== Section Headers ===== */
         .section-header {
@@ -275,20 +240,14 @@
 
         /* ===== Cards ===== */
         .card {
-            background: var(--bg-card);
+            background: var(--bg-secondary);
             border: 1px solid var(--border-card);
             border-radius: var(--radius);
             padding: 2rem;
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-card);
-            transition: var(--transition);
         }
 
         .card:hover {
-            border-color: var(--border-card-hover);
-            background: var(--bg-card-hover);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-glow);
+            border-color: var(--accent-primary);
         }
 
         /* ===== About Section ===== */
@@ -613,8 +572,7 @@
         }
 
         .cert-item:hover {
-            border-color: var(--border-card-hover);
-            transform: translateX(6px);
+            border-color: var(--accent-primary);
         }
 
         .cert-icon {
@@ -790,14 +748,7 @@
 
         /* ===== Scroll Animations ===== */
         .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .reveal.visible {
             opacity: 1;
-            transform: translateY(0);
         }
 
         /* ===== Responsive ===== */
@@ -888,13 +839,6 @@
 
 <body>
 
-    <!-- Background Effects -->
-    <div class="bg-effects">
-        <div class="bg-orb"></div>
-        <div class="bg-orb"></div>
-        <div class="bg-orb"></div>
-    </div>
-
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
@@ -918,17 +862,9 @@
         <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-graduation-cap"></i>
-                    CFGS ASIX — En curs
-                </div>
-                <h1>
-                    Sóc <span class="gradient-text">Àlex Pica Castro</span><br>
-                    Tècnic en Sistemes
-                </h1>
+                <h1>Àlex Pica Castro</h1>
                 <p class="hero-subtitle">
-                    Persona proactiva, responsable i amb gran interès en l'administració de sistemes, xarxes i
-                    ciberseguretat. Actualment cursant ASIX a l'Institut Sapalomera.
+                    Tècnic en Sistemes Microinformàtics i Xarxes i estudiant de 2n d'ASIX. Especialitzat en administració de sistemes, xarxes i ciberseguretat.
                 </p>
                 <div class="hero-links">
                     <a href="#contact" class="btn btn-primary">
@@ -1324,21 +1260,7 @@
             });
         });
 
-        // ===== Scroll Reveal =====
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        revealElements.forEach(el => observer.observe(el));
+        /* Eliminat el sistema de scroll reveal per simplicitat */
 
         // ===== Lightbox =====
         function openLightbox(src) {
@@ -1364,9 +1286,9 @@
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('nav');
             if (window.scrollY > 50) {
-                nav.style.background = 'rgba(15, 23, 42, 0.95)';
+                nav.style.background = '#0f172a';
             } else {
-                nav.style.background = 'rgba(15, 23, 42, 0.85)';
+                nav.style.background = '#0f172a';
             }
         });
     </script>
