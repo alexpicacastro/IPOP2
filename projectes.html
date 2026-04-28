@@ -47,14 +47,7 @@
             overflow-x: hidden;
         }
 
-        /* ===== Background Effects ===== */
-        .bg-effects {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            background: radial-gradient(circle at 50% -20%, #1e293b 0%, #0f172a 100%);
-        }
+        /* Navigation */
 
         /* ===== Navigation ===== */
         .nav {
@@ -62,10 +55,8 @@
             top: 0; left: 0; right: 0;
             z-index: 100;
             padding: 1rem 2rem;
-            backdrop-filter: blur(20px);
-            background: rgba(15, 23, 42, 0.85);
+            background: var(--bg-primary);
             border-bottom: 1px solid var(--border-card);
-            transition: var(--transition);
         }
 
         .nav-inner {
@@ -207,20 +198,14 @@
 
         /* ===== Cards ===== */
         .card {
-            background: var(--bg-card);
+            background: var(--bg-secondary);
             border: 1px solid var(--border-card);
             border-radius: var(--radius);
             padding: 2rem;
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-card);
-            transition: var(--transition);
         }
 
         .card:hover {
-            border-color: var(--border-card-hover);
-            background: var(--bg-card-hover);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-glow);
+            border-color: var(--accent-primary);
         }
 
         /* ===== Buttons ===== */
@@ -540,13 +525,6 @@
 </head>
 <body>
 
-    <!-- Background Effects -->
-    <div class="bg-effects">
-        <div class="bg-orb"></div>
-        <div class="bg-orb"></div>
-        <div class="bg-orb"></div>
-    </div>
-
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
@@ -565,14 +543,9 @@
     </nav>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-folder-open"></i>
-                    Portafoli de projectes
-                </div>
-                <h1>Els meus <span class="gradient-text">Projectes</span></h1>
+                <h1>Els meus Projectes</h1>
                 <p class="hero-subtitle">
                     Projectes realitzats durant la formació en ASIX que demostren les meves competències en programació, bases de dades, sistemes i disseny web.
                 </p>
@@ -756,17 +729,7 @@
             });
         });
 
-        // ===== Scroll Reveal =====
-        const revealElements = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        revealElements.forEach(el => observer.observe(el));
+        /* Animacions eliminades */
 
         // ===== Lightbox =====
         function openLightbox(src) {
