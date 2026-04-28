@@ -26,7 +26,7 @@
             --accent-primary: #3b82f6;
             --accent-secondary: #60a5fa;
             --radius: 8px;
-            --transition: all 0.2s ease;
+            --transition: none;
         }
 
         *,
@@ -49,7 +49,10 @@
             overflow-x: hidden;
         }
 
-        /* Eliminades animacions i orbes per simplicitat */
+        /* Desactivar efectes de fons */
+        .bg-effects {
+            display: none;
+        }
 
         /* ===== Navigation ===== */
         .nav {
@@ -60,7 +63,6 @@
             z-index: 100;
             background: var(--bg-primary);
             border-bottom: 1px solid var(--border-card);
-            transition: var(--transition);
         }
 
         .nav-inner {
@@ -258,11 +260,10 @@
 
         /* ===== Cards ===== */
         .card {
-            background: var(--bg-card);
+            background: var(--bg-secondary);
             border: 1px solid var(--border-card);
             border-radius: var(--radius);
             padding: 2rem;
-            transition: var(--transition);
         }
 
         .card:hover {
@@ -344,6 +345,7 @@
             height: 12px;
             border-radius: 50%;
             background: var(--accent-primary);
+            box-shadow: 0 0 10px var(--accent-glow);
         }
 
         .timeline-period {
@@ -559,7 +561,7 @@
 
         .bar-native {
             width: 100%;
-            background: var(--accent-primary);
+            background: var(--gradient-1);
         }
 
         .bar-b1 {
@@ -569,7 +571,7 @@
 
         .bar-basic {
             width: 30%;
-            background: var(--accent-primary);
+            background: var(--gradient-3);
         }
 
         /* ===== Certificates ===== */
@@ -762,13 +764,17 @@
         }
 
         footer .footer-name {
-            color: var(--accent-secondary);
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: 600;
         }
 
         /* ===== Scroll Animations ===== */
         .reveal {
-            opacity: 1;
+            opacity: 1 !important;
+            transform: none !important;
         }
 
         /* ===== Responsive ===== */
@@ -858,6 +864,13 @@
 </head>
 
 <body>
+
+    <!-- Background Effects -->
+    <div class="bg-effects">
+        <div class="bg-orb"></div>
+        <div class="bg-orb"></div>
+        <div class="bg-orb"></div>
+    </div>
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
