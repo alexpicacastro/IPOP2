@@ -185,11 +185,10 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.75rem 1.5rem;
-            border-radius: 12px;
+            border-radius: 8px;
             font-size: 0.9rem;
             font-weight: 600;
             text-decoration: none;
-            transition: var(--transition);
             cursor: pointer;
             border: none;
         }
@@ -210,22 +209,11 @@
         }
 
         .btn-outline:hover {
-            background: rgba(99, 102, 241, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             border-color: var(--accent-primary);
-            transform: translateY(-2px);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
         /* ===== Section Headers ===== */
         .section-header {
@@ -593,8 +581,7 @@
         }
 
         .cert-item:hover {
-            border-color: var(--border-card-hover);
-            transform: translateX(6px);
+            border-color: var(--accent-primary);
         }
 
         .cert-icon {
@@ -732,15 +719,9 @@
             width: 100%;
             max-height: 400px;
             object-fit: contain;
-            border-radius: var(--radius-sm);
+            border-radius: 4px;
             margin-bottom: 1rem;
-            transition: var(--transition);
-            opacity: 0.9;
-        }
-
-        .cv-card:hover img {
             opacity: 1;
-            transform: scale(1.02);
         }
 
         .cv-card h3 {
@@ -764,10 +745,7 @@
         }
 
         footer .footer-name {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
             font-weight: 600;
         }
 
@@ -819,8 +797,7 @@
             position: fixed;
             inset: 0;
             z-index: 1000;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.95);
             align-items: center;
             justify-content: center;
             cursor: pointer;
@@ -835,8 +812,7 @@
             max-width: 90%;
             max-height: 90vh;
             object-fit: contain;
-            border-radius: var(--radius);
-            box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
         }
 
         .lightbox-close {
@@ -854,7 +830,6 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             border: none;
-            transition: var(--transition);
         }
 
         .lightbox-close:hover {
