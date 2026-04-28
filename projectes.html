@@ -568,28 +568,22 @@
 
 <body>
 
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">AP</a>
-            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="nav-logo">Àlex Pica Castro</a>
+            <ul class="nav-links">
                 <li><a href="index.html">Inici</a></li>
-                <li><a href="projectes.html" class="active">Projectes</a></li>
-                <li><a href="#hospital">Hospital</a></li>
-                <li><a href="#wix">Web Wix</a></li>
-                <li><a href="index.html#contact">Contacte</a></li>
+                <li><a href="projectes.html">Projectes</a></li>
+                <li><a href="documentacio.html">Documentació</a></li>
             </ul>
         </div>
-    </nav>
+    </header>
 
     <main>
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i class="fas fa-folder-open"></i>
                     Portafoli de projectes
                 </div>
                 <h1>Els meus <span class="accent-text">Projectes</span></h1>
@@ -599,10 +593,10 @@
                 </p>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <a href="#hospital" class="btn btn-hospital">
-                        <i class="fas fa-hospital"></i> Projecte Hospital
+                        Projecte Hospital
                     </a>
                     <a href="#wix" class="btn btn-wix">
-                        <i class="fas fa-globe"></i> Web Personal Wix
+                        Web Personal Wix
                     </a>
                 </div>
             </div>
@@ -615,10 +609,10 @@
                 <div class="project-header-content" style="padding-top: 0.5rem;">
                     <div class="project-info">
                         <div class="project-tags">
-                            <span class="project-tag tag-python"><i class="fab fa-python"></i> Python</span>
-                            <span class="project-tag tag-postgresql"><i class="fas fa-database"></i> PostgreSQL</span>
-                            <span class="project-tag tag-security"><i class="fas fa-lock"></i> Criptografia</span>
-                            <span class="project-tag tag-xml"><i class="fas fa-file-code"></i> XML</span>
+                            <span class="project-tag tag-python">Python</span>
+                            <span class="project-tag tag-postgresql">PostgreSQL</span>
+                            <span class="project-tag tag-security">Criptografia</span>
+                            <span class="project-tag tag-xml">XML</span>
                         </div>
                         <h2>Projecte Hospital</h2>
                         <p>
@@ -630,10 +624,10 @@
                         </p>
                         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
                             <a href="ProjecteHospital.zip" download class="btn btn-hospital">
-                                <i class="fas fa-download"></i> Descarregar Codi
+                                Descarregar Codi
                             </a>
                             <a href="documentacio.html" class="btn btn-outline">
-                                <i class="fas fa-book-open"></i> Veure Documentació
+                                Veure Documentació
                             </a>
                         </div>
                     </div>
@@ -646,37 +640,31 @@
             <!-- Features -->
             <div class="features-grid">
                 <div class="card feature-card">
-                    <div class="feature-icon green"><i class="fas fa-user-md"></i></div>
                     <h3>Gestió de personal</h3>
                     <p>Alta de metges, infermers i personal vari amb assignació de rols PostgreSQL i permisos
                         específics.</p>
                 </div>
                 <div class="card feature-card">
-                    <div class="feature-icon blue"><i class="fas fa-procedures"></i></div>
                     <h3>Pacients i visites</h3>
                     <p>Registre de pacients, historial de visites, diagnòstics, medicaments receptats i ingressos
                         hospitalaris.</p>
                 </div>
                 <div class="card feature-card">
-                    <div class="feature-icon purple"><i class="fas fa-syringe"></i></div>
                     <h3>Operacions i quiròfans</h3>
                     <p>Planificació d'operacions amb reserva de quiròfans, equipament mèdic i assignació de personal.
                     </p>
                 </div>
                 <div class="card feature-card">
-                    <div class="feature-icon amber"><i class="fas fa-shield-alt"></i></div>
                     <h3>Seguretat i xifrat</h3>
                     <p>Autenticació segura amb credencials xifrades amb Fernet. Creació de rols i permisos a PostgreSQL.
                     </p>
                 </div>
                 <div class="card feature-card">
-                    <div class="feature-icon pink"><i class="fas fa-chart-bar"></i></div>
                     <h3>Informes i rànkings</h3>
                     <p>Rànking de metges per visites, rànking de malalties, informes de personal i plantes
                         hospitalàries.</p>
                 </div>
                 <div class="card feature-card">
-                    <div class="feature-icon cyan"><i class="fas fa-file-export"></i></div>
                     <h3>Exportació XML</h3>
                     <p>Generació de fitxers XML amb dades de visites en un rang de dates, usant funcions XML de
                         PostgreSQL.</p>
@@ -686,17 +674,17 @@
             <!-- Tech Stack -->
             <div class="card" style="margin-top: 1.5rem;">
                 <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">
-                    <i class="fas fa-tools" style="color: var(--accent-secondary);"></i> Stack Tecnològic
+                    Stack Tecnològic
                 </h3>
                 <div class="tech-stack">
-                    <span class="tech-item"><i class="fab fa-python"></i> Python 3.11</span>
-                    <span class="tech-item"><i class="fas fa-database"></i> PostgreSQL</span>
-                    <span class="tech-item"><i class="fas fa-plug"></i> psycopg2</span>
-                    <span class="tech-item"><i class="fas fa-lock"></i> Fernet (cryptography)</span>
-                    <span class="tech-item"><i class="fas fa-file-code"></i> lxml / etree</span>
-                    <span class="tech-item"><i class="fas fa-file-csv"></i> CSV</span>
-                    <span class="tech-item"><i class="fas fa-random"></i> Faker (Dummy Data)</span>
-                    <span class="tech-item"><i class="fas fa-server"></i> Alta disponibilitat</span>
+                    <span class="tech-item">Python 3.11</span>
+                    <span class="tech-item">PostgreSQL</span>
+                    <span class="tech-item">psycopg2</span>
+                    <span class="tech-item">Fernet (cryptography)</span>
+                    <span class="tech-item">lxml / etree</span>
+                    <span class="tech-item">CSV</span>
+                    <span class="tech-item">Faker (Dummy Data)</span>
+                    <span class="tech-item">Alta disponibilitat</span>
                 </div>
             </div>
 
@@ -709,9 +697,9 @@
                 <div class="project-header-content" style="padding-top: 0.5rem;">
                     <div class="project-info">
                         <div class="project-tags">
-                            <span class="project-tag tag-wix"><i class="fab fa-wix"></i> Wix</span>
-                            <span class="project-tag tag-web"><i class="fas fa-palette"></i> Disseny Web</span>
-                            <span class="project-tag tag-design"><i class="fas fa-mobile-alt"></i> Responsive</span>
+                            <span class="project-tag tag-wix">Wix</span>
+                            <span class="project-tag tag-web">Disseny Web</span>
+                            <span class="project-tag tag-design">Responsive</span>
                         </div>
                         <h2>Web Personal — Wix</h2>
                         <p>
@@ -720,9 +708,11 @@
                             i carta de presentació professional. Inclou informació personal, formació, habilitats
                             i experiència amb un disseny modern, atractiu i adaptat a dispositius mòbils.
                         </p>
-                        <a href="https://apica3.wixsite.com/website" target="_blank" class="btn btn-wix">
-                            <i class="fas fa-external-link-alt"></i> Visitar la web
-                        </a>
+                        <div class="project-links">
+                            <a href="https://apica3.wixsite.com/website" target="_blank" class="btn btn-wix">
+                                Visitar la web
+                            </a>
+                        </div>
                     </div>
                     <div class="project-image-container">
                         <iframe src="https://apica3.wixsite.com/website"
@@ -735,21 +725,16 @@
             <!-- Features -->
             <div class="features-grid">
                 <div class="card feature-card">
-                    <div class="feature-icon pink"><i class="fas fa-paint-brush"></i></div>
-                    <h3>Disseny visual</h3>
-                    <p>Disseny modern i professional amb una estètica cuidada, colors harmoniosos i tipografia elegant.
-                    </p>
+                    <h3>Disseny Visual</h3>
+                    <p>Estètica personalitzada amb la identitat visual d'Àlex Pica Castro.</p>
                 </div>
                 <div class="card feature-card">
-                    <div class="feature-icon purple"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Responsive</h3>
-                    <p>Adaptat a tots els dispositius: mòbils, tauletes i escriptoris per una experiència fluida.</p>
+                    <h3>Totalment Responsive</h3>
+                    <p>Optimitzat per a dispositius mòbils, tauletes i escriptoris.</p>
                 </div>
                 <div class="card feature-card">
-                    <div class="feature-icon cyan"><i class="fas fa-id-badge"></i></div>
-                    <h3>Portafoli professional</h3>
-                    <p>Presentació personal com a carta de presentació amb formació, habilitats i objectius
-                        professionals.</p>
+                    <h3>Marca Personal</h3>
+                    <p>Integració de portfolio, contacte i enllaços a xarxes professionals.</p>
                 </div>
             </div>
         </section>
@@ -762,7 +747,7 @@
         </p>
         <p style="margin-top: 0.5rem;">
             <a href="index.html" style="color: var(--accent-secondary); text-decoration: none; font-size: 0.85rem;">
-                <i class="fas fa-arrow-left"></i> Tornar a l'inici
+                Tornar a l'inici
             </a>
         </p>
     </footer>
