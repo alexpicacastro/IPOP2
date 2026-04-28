@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Manual d'Usuari - Projecte Hospital">
-    <title>Documentació Projecte Hospital — Àlex Pica Castro</title>
+    <meta name="description"
+        content="Informe Personal d'Orientació Professional d'Àlex Pica Castro - Tècnic en Sistemes i Administració de Xarxes">
+    <meta name="author" content="Àlex Pica Castro">
+    <title>IPOP - Àlex Pica Castro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* ===== CSS Variables & Reset ===== */
         :root {
-            --bg-primary: #0a0e17;
-            --bg-secondary: #111827;
-            --bg-card: rgba(17, 24, 39, 0.7);
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: rgba(30, 41, 59, 0.5);
             --bg-card-hover: rgba(30, 41, 59, 0.8);
-            --border-card: rgba(99, 102, 241, 0.15);
-            --border-card-hover: rgba(99, 102, 241, 0.4);
-            --text-primary: #f1f5f9;
+            --border-card: rgba(148, 163, 184, 0.1);
+            --border-card-hover: rgba(59, 130, 246, 0.3);
+            --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
-            --accent-primary: #6366f1;
-            --accent-secondary: #818cf8;
-            --accent-glow: rgba(99, 102, 241, 0.3);
-            --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
-            --gradient-hospital: linear-gradient(135deg, #10b981, #06b6d4, #3b82f6);
-            --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
-            --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.15);
-            --radius: 16px;
-            --radius-sm: 10px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --accent-primary: #3b82f6;
+            --accent-secondary: #60a5fa;
+            --accent-glow: rgba(59, 130, 246, 0.1);
+            --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.2);
+            --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --transition: all 0.3s ease;
         }
 
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -55,34 +61,15 @@
             inset: 0;
             z-index: 0;
             pointer-events: none;
-            overflow: hidden;
-        }
-
-        .bg-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .bg-orb:nth-child(1) {
-            width: 500px; height: 500px;
-            background: rgba(16, 185, 129, 0.12);
-            top: -100px; right: -100px;
-        }
-
-        .bg-orb:nth-child(2) {
-            width: 400px; height: 400px;
-            background: rgba(139, 92, 246, 0.1);
-            bottom: 20%; left: -80px;
-            animation-delay: -7s;
+            background: radial-gradient(circle at 50% -20%, #1e293b 0%, #0f172a 100%);
         }
 
         /* ===== Navigation ===== */
         .nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
             padding: 1rem 2rem;
             backdrop-filter: blur(20px);
@@ -102,10 +89,8 @@
         .nav-logo {
             font-size: 1.25rem;
             font-weight: 700;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
             text-decoration: none;
         }
 
@@ -114,7 +99,6 @@
             gap: 0.5rem;
             list-style: none;
             flex-wrap: wrap;
-            align-items: center;
         }
 
         .nav-links a {
@@ -132,135 +116,724 @@
             background: rgba(99, 102, 241, 0.1);
         }
 
-        .btn-back {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            background: rgba(99, 102, 241, 0.15);
-            color: var(--accent-secondary);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-        }
-
-        .btn-back:hover {
-            background: var(--gradient-1);
-            color: white;
-            border-color: transparent;
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         /* ===== Main Content ===== */
         main {
             position: relative;
             z-index: 1;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 120px 1.5rem 4rem;
+            padding: 0 1.5rem;
         }
 
-        h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
+        section {
+            margin-bottom: 4rem;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: var(--accent-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            background: var(--gradient-hospital);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-align: center;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
         }
 
-        .subtitle {
-            text-align: center;
+        .hero h1 .gradient-text {
+            color: var(--accent-secondary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
             color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
         }
 
-        /* ===== Documentation Content ===== */
-        .doc-section {
+        .hero-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-card-hover);
+        }
+
+        .btn-outline:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== Section Headers ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .section-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--accent-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== Cards ===== */
+        .card {
             background: var(--bg-card);
             border: 1px solid var(--border-card);
             border-radius: var(--radius);
-            padding: 2.5rem;
-            margin-bottom: 2rem;
+            padding: 2rem;
             backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition);
         }
 
-        h2 {
-            font-size: 1.8rem;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            border-bottom: 1px solid var(--border-card);
-            padding-bottom: 0.75rem;
+        .card:hover {
+            border-color: var(--border-card-hover);
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
         }
 
-        h3 {
-            font-size: 1.3rem;
+        /* ===== About Section ===== */
+        #about {
+            padding-top: 2rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .about-card .card-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             color: var(--accent-secondary);
-            margin: 2rem 0 1rem;
+            margin-bottom: 0.5rem;
         }
 
-        p {
+        .about-card .card-value {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .about-card .card-value a {
+            color: var(--accent-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .about-card .card-value a:hover {
+            color: var(--accent-primary);
+        }
+
+        .about-intro {
+            grid-column: 1 / -1;
+        }
+
+        .about-intro p {
             color: var(--text-secondary);
-            margin-bottom: 1.2rem;
             font-size: 1.05rem;
             line-height: 1.8;
         }
 
-        code {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.9em;
-            color: #fbbf24;
+        /* ===== Education / Timeline ===== */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
         }
 
-        .img-block {
-            margin: 2rem 0;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.6rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+        }
+
+        .timeline-period {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .timeline-badge {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 50px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            color: var(--accent-secondary);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* ===== Experience ===== */
+        .experience-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent-primary);
+        }
+
+        .experience-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-card .role-company {
+            color: var(--accent-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .experience-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .experience-card ul li {
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .experience-card ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        /* ===== Profile Section ===== */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .profile-card {
             text-align: center;
+            padding: 2rem 1.5rem;
         }
 
-        .img-block img {
-            max-width: 100%;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border-card);
-            box-shadow: var(--shadow-card);
-            cursor: pointer;
+        .profile-card .profile-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* ===== Skills Section ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
             transition: var(--transition);
         }
 
-        .img-block img:hover {
-            transform: scale(1.02);
-            border-color: var(--accent-secondary);
+        .skill-tag:hover {
+            background: rgba(99, 102, 241, 0.15);
+            border-color: rgba(99, 102, 241, 0.35);
+            color: var(--text-primary);
+            transform: translateY(-2px);
         }
 
-        .img-caption {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 0.75rem;
-            font-style: italic;
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
-        ul {
+        /* ===== Languages ===== */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .language-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .language-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .language-level {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .level-native {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.25);
+        }
+
+        .level-b1 {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
+
+        .level-basic {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.25);
+        }
+
+        .language-bar-container {
+            margin-top: 1rem;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .language-bar {
+            height: 100%;
+            border-radius: 50px;
+            transition: width 1.5s ease-out;
+        }
+
+        .bar-native {
+            width: 100%;
+            background: var(--accent-primary);
+        }
+
+        .bar-b1 {
+            width: 60%;
+            background: var(--accent-secondary);
+        }
+
+        .bar-basic {
+            width: 30%;
+            background: var(--text-muted);
+        }
+
+        /* ===== Certificates ===== */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .cert-item:hover {
+            border-color: var(--border-card-hover);
+            transform: translateX(6px);
+        }
+
+        .cert-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(99, 102, 241, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-secondary);
+            font-size: 1rem;
+        }
+
+        .cert-name {
+            font-size: 0.9rem;
+            font-weight: 500;
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
         }
 
-        li {
-            margin-bottom: 0.5rem;
+        /* ===== Objectives ===== */
+        .objectives-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .objectives-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent-primary);
+        }
+
+        .objectives-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .objectives-card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== Contact Section ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-card .contact-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-card .contact-icon.email {
+            background: rgba(99, 102, 241, 0.15);
+            color: #818cf8;
+        }
+
+        .contact-card .contact-icon.phone {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+        }
+
+        .contact-card .contact-icon.github {
+            background: rgba(148, 163, 184, 0.15);
+            color: #94a3b8;
+        }
+
+        .contact-card .contact-icon.linkedin {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+        }
+
+        .contact-card .contact-icon.web {
+            background: rgba(236, 72, 153, 0.15);
+            color: #f472b6;
+        }
+
+        .contact-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-value {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* ===== CV Section ===== */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .cv-card {
+            text-align: center;
+            padding: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cv-card img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1rem;
+            transition: var(--transition);
+            opacity: 0.9;
+        }
+
+        .cv-card:hover img {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
+        .cv-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 3rem 1.5rem;
+            border-top: 1px solid var(--border-card);
+            margin-top: 2rem;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer .footer-name {
+            color: var(--accent-secondary);
+            font-weight: 600;
+        }
+
+        /* ===== Scroll Animations ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 14, 23, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 1rem;
+                border-bottom: 1px solid var(--border-card);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
         }
 
         /* ===== Lightbox ===== */
@@ -277,7 +850,9 @@
             padding: 2rem;
         }
 
-        .lightbox.active { display: flex; }
+        .lightbox.active {
+            display: flex;
+        }
 
         .lightbox img {
             max-width: 90%;
@@ -289,11 +864,13 @@
 
         .lightbox-close {
             position: absolute;
-            top: 1.5rem; right: 1.5rem;
+            top: 1.5rem;
+            right: 1.5rem;
             color: white;
             font-size: 2rem;
             cursor: pointer;
-            width: 48px; height: 48px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -303,159 +880,427 @@
             transition: var(--transition);
         }
 
-        .lightbox-close:hover { background: rgba(255, 255, 255, 0.2); }
-
-        /* ===== Footer ===== */
-        footer {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid var(--border-card);
-            margin-top: 2rem;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 768px) {
-            .doc-section { padding: 1.5rem; }
-            h2 { font-size: 1.5rem; }
-            h3 { font-size: 1.2rem; }
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
+
 <body>
 
     <!-- Background Effects -->
     <div class="bg-effects">
         <div class="bg-orb"></div>
         <div class="bg-orb"></div>
+        <div class="bg-orb"></div>
     </div>
 
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">AP</a>
-            <a href="projectes.html" class="btn-back">
-                <i class="fas fa-arrow-left"></i> Tornar a Projectes
-            </a>
+            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">Sobre mi</a></li>
+                <li><a href="#education">Formació</a></li>
+                <li><a href="#experience">Experiència</a></li>
+                <li><a href="#skills">Habilitats</a></li>
+                <li><a href="#certificates">Certificats</a></li>
+                <li><a href="projectes.html">Projectes</a></li>
+                <li><a href="#contact">Contacte</a></li>
+            </ul>
         </div>
     </nav>
 
     <main>
-        <h1>Manual d'Usuari</h1>
-        <p class="subtitle">Documentació oficial i manual d'instruccions per a l'aplicació del Projecte Hospital (Serveis 24-25).</p>
-
-        <section class="doc-section">
-            <h2><i class="fas fa-play-circle"></i> 1. Inici i Login</h2>
-            <p>Per començar, tenim el primer fitxer que utilitzarem durant tot el programa que és el <code>main.py</code>. Aquest fitxer controla el menú principal en tot moment.</p>
-            <p>De primeres hem d'executar el programa i ens surt aquest menú d'inici de sessió:</p>
-            
-            <div class="img-block">
-                <img src="img/Imagen1.png" alt="Menú d'inici" onclick="openLightbox(this.src)">
-                <div class="img-caption">Fig 1. Menú principal - Inici de sessió</div>
-            </div>
-
-            <p>Aquest sistema inicia sessió al programa amb codificació. Depenent de l'usuari amb el qual iniciem sessió, tindrà els seus propis rols i permisos a la base de dades.</p>
-            <p>Et pregunta l'usuari per iniciar sessió i després la contrasenya.</p>
-            
-            <div style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 1rem; border-radius: 4px; margin: 1.5rem 0;">
-                <p style="margin: 0; color: #f1f5f9;"><strong>💡 Nota per provar el programa:</strong> Pots utilitzar l'usuari <code>admin</code> i la contrasenya <code>admin</code> per accedir i testejar totes les funcionalitats de l'aplicació.</p>
-            </div>
-
-            <div class="img-block">
-                <img src="img/Imagen3.png" alt="Inserir contrasenya" onclick="openLightbox(this.src)">
-                <div class="img-caption">Fig 2. Sol·licitud de contrasenya xifrada</div>
-            </div>
-
-            <p>Si és tot correcte veurem el menú del programa. Si no és correcte, el programa avisarà que hem posat malament l'usuari o la contrasenya.</p>
-        </section>
-
-        <section class="doc-section">
-            <h2><i class="fas fa-tools"></i> 2. Manteniments</h2>
-            <p>Confirmant que hem iniciat sessió amb l'usuari i contrasenya correctes ens sortirà aquest menú, des d'on podrem mirar i executar l'usuari tenint en compte els permisos que té.</p>
-            
-            <div class="img-block">
-                <img src="img/Imagen6.png" alt="Menú de manteniments" onclick="openLightbox(this.src)">
-                <div class="img-caption">Fig 3. Menú general del sistema</div>
-            </div>
-
-            <h3>1.1 Obtenir dependència infermeria</h3>
-            <p>Aquí podem posar el número del ID de la infermera i ens dirà si depèn d'una planta o d'un metge.</p>
-            <div class="img-block">
-                <img src="img/Imagen8.png" alt="Dependència Infermeria" onclick="openLightbox(this.src)">
-                <div class="img-caption">Fig 4. Consulta de dependència (Dependència d'un metge / planta)</div>
-            </div>
-
-            <h3>1.2 Informació del quiròfan</h3>
-            <p>Aquí podem veure el dia, el pacient que s'operarà, en quin quiròfan i quins metges i infermeres estaran fent l'operació.</p>
-            <div class="img-block">
-                <img src="img/Imagen10.png" alt="Info quiròfan" onclick="openLightbox(this.src)">
-                <div class="img-caption">Fig 5. Informació detallada sobre operacions en quiròfans</div>
-            </div>
-
-            <h3>1.3 Informació de les visites i pacient</h3>
-            <p>Podrem accedir a la informació de les visites que hi ha en aquell dia (hora, nom del metge i nom del pacient) o buscar la <strong>Informació completa d'un pacient</strong> (diagnòstics, receptes, etc.).</p>
-            <div class="img-block">
-                <img src="img/Imagen13.png" alt="Info Pacient" onclick="openLightbox(this.src)">
-                <div class="img-caption">Fig 6. Historial de visites i ingressos d'un pacient específic</div>
-            </div>
-
-            <h3>1.7 Crear un nou usuari / pacient</h3>
-            <p>Aquí posem la informació del nou usuari com el DNI, contrasenya, i especialitat (metge, infermer/a o personal vari) i automàticament se'l registrarà a la base de dades PostgreSQL amb el rol adequat.</p>
-            <div class="img-block">
-                <img src="img/Imagen15.png" alt="Creació usuari" onclick="openLightbox(this.src)">
-                <div class="img-caption">Fig 7. Procés d'alta d'un nou treballador</div>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-graduation-cap"></i>
+                    CFGS ASIX — En curs
+                </div>
+                <h1>
+                    Sóc <span class="gradient-text">Àlex Pica Castro</span><br>
+                    Tècnic en Sistemes
+                </h1>
+                <p class="hero-subtitle">
+                    Persona proactiva, responsable i amb gran interès en l'administració de sistemes, xarxes i
+                    ciberseguretat. Actualment cursant ASIX a l'Institut Sapalomera.
+                </p>
+                <div class="hero-links">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Contacta'm
+                    </a>
+                    <a href="projectes.html" class="btn btn-outline">
+                        <i class="fas fa-folder-open"></i> Projectes
+                    </a>
+                    <a href="#cv" class="btn btn-outline">
+                        <i class="fas fa-file-alt"></i> Veure CV
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section class="doc-section">
-            <h2><i class="fas fa-chart-line"></i> 3. Consultes i Informes</h2>
-            <p>Dins d'aquí podem aconseguir rànkings i consultes o informes que hi ha dins del nostre hospital.</p>
-            
-            <div class="img-block">
-                <img src="img/Imagen17.png" alt="Menú consultes" onclick="openLightbox(this.src)">
-                <div class="img-caption">Fig 8. Menú d'informes i rànkings</div>
+        <!-- About Section -->
+        <section id="about" class="reveal">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-user"></i></div>
+                <h2>Qui soc jo?</h2>
+                <p>Presentació personal i informació de contacte</p>
             </div>
+            <div class="about-grid">
+                <div class="card about-card about-intro">
+                    <div class="card-label">Presentació</div>
+                    <p>Sóc l'Àlex Pica Castro, tècnic especialitzat en sistemes informàtics i xarxes. Amb una base sòlida obtinguda en el CFGM de SMX i actualment cursant el CFGS d'ASIX, enfoco la meva carrera professional cap a l'administració d'infraestructures tecnològiques, la seguretat de dades i l'optimització de xarxes en entorns corporatius.</p>
+                </div>
+        </section>
 
-            <h3>Rànking de metges i malalties</h3>
-            <p>Aquí surten els rànkings dels metges amb més visites de tot l'hospital i també les malalties més freqüents registrades als diagnòstics.</p>
-            <div class="img-block">
-                <img src="img/Imagen21.png" alt="Rànking metges" onclick="openLightbox(this.src)">
-                <div class="img-caption">Fig 9. Resultats del rànking de visites per metge</div>
+        <!-- Education Section -->
+        <section id="education" class="reveal">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h2>Formació Acadèmica</h2>
+                <p>El meu recorregut educatiu</p>
+            </div>
+            <div class="card">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-period">2023 — 2026</div>
+                        <div class="timeline-title">CFGS Administració de Sistemes Informàtics en Xarxa (ASIX)</div>
+                        <div class="timeline-subtitle">Institut Sapalomera</div>
+                        <span class="timeline-badge">EQF 5 — En curs</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-period">2021 — 2023</div>
+                        <div class="timeline-title">CFGM Sistemes Microinformàtics i Xarxes (SMX)</div>
+                        <div class="timeline-subtitle">Institut Sa Palomera</div>
+                        <span class="timeline-badge">EQF 4</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-period">2017 — 2021</div>
+                        <div class="timeline-title">Educació Secundària Obligatòria (ESO)</div>
+                        <div class="timeline-subtitle">IES Serrallarga</div>
+                        <span class="timeline-badge">EQF 3</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="doc-section">
-            <h2><i class="fas fa-file-export"></i> 4. Exportació de dades (XML) i Dummy Data</h2>
-            <p>Aquesta funció ens permet agafar dues dades, una data d'inici i una data de fi, i extreu tota la informació de les visites durant el rang de dies escollit. Les salva a un fitxer XML que s'exportarà a la ubicació que triem.</p>
-            <div class="img-block">
-                <img src="img/Imagen23.png" alt="Exportació XML" onclick="openLightbox(this.src)">
-                <div class="img-caption">Fig 10. Selecció de dates i rutes per generar arxius XML</div>
+        <!-- Experience Section -->
+        <section id="experience" class="reveal">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-briefcase"></i></div>
+                <h2>Experiència Laboral</h2>
+                <p>On he posat en pràctica els meus coneixements</p>
             </div>
-
-            <h3>Dummy Data (Dades de prova)</h3>
-            <p>Genera milers de dades "Fake" fent servir la llibreria <code>Faker</code> dins la base de dades per fer proves de rendiment, comprovació d'errors o manteniment.</p>
-            <div class="img-block">
-                <img src="img/Imagen25.png" alt="Generar rànkings" onclick="openLightbox(this.src)">
-                <div class="img-caption">Fig 11. Opció per omplir la DB de dades automàtiques</div>
+            <div class="card experience-card">
+                <h3>Tècnic en Sistemes</h3>
+                <div class="role-company">
+                    <i class="fas fa-building"></i> Institut S'Agulla, Blanes — Pràctiques (2022–2023)
+                </div>
+                <ul>
+                    <li>Instal·lació i configuració de sistemes operatius Windows i Linux</li>
+                    <li>Manteniment i administració de xarxes locals</li>
+                    <li>Resolució de problemes de hardware i software</li>
+                </ul>
+            </div>
+            <div class="card experience-card">
+                <h3>Desenvolupador i Tècnic de Sistemes</h3>
+                <div class="role-company">
+                    <i class="fas fa-building"></i> Orbitwave, Portugal — Erasmus+ (2024–2025)
+                </div>
+                <ul>
+                    <li>Disseny i implementació d'un programari per a l'optimització i gestió de sistemes informàtics
+                    </li>
+                    <li>Administració avançada d'entorns híbrids Windows i Linux Server</li>
+                    <li>Planificació i manteniment proactiu de la infraestructura de xarxa</li>
+                    <li>Suport tècnic especialitzat i resolució d'incidències d'alt nivell</li>
+                </ul>
             </div>
         </section>
-        
-        <section class="doc-section">
-            <h2><i class="fas fa-list-ul"></i> Llibreries i Requisits Tècnics</h2>
-            <ul>
-                <li><strong><code>datetime</code>:</strong> Per manipular dates i hores. Treballant amb visites i exportacions.</li>
-                <li><strong><code>random</code>:</strong> Mòdul per funcions i operacions pseudoaleatòries.</li>
-                <li><strong><code>faker</code>:</strong> Biblioteca que permet generar dades falses (noms, dates de naixement, adreces) per als registres pacients.</li>
-                <li><strong><code>psycopg2</code>:</strong> Adaptador de bases de dades per interactuar de forma impecable amb PostgreSQL.</li>
-                <li><strong><code>etree</code> / <code>lxml</code>:</strong> Per analitzar i crear els resultats d'exportacions massives com a dades XML.</li>
-                <li><strong><code>Fernet (cryptography)</code>:</strong> Eina de xifrat simètric per protegir la base de dades d'usuaris (contrasenyes i dades sensibles).</li>
-            </ul>
+
+        <!-- Professional Profile -->
+        <section id="profile" class="reveal">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-id-card"></i></div>
+                <h2>Perfil Professional</h2>
+                <p>Identificació del títol i competència general</p>
+            </div>
+            <div class="profile-grid">
+                <div class="card profile-card">
+                    <div class="profile-icon">🎓</div>
+                    <h3>Títol</h3>
+                    <p>Administració de sistemes informàtics en xarxa</p>
+                </div>
+                <div class="card profile-card">
+                    <div class="profile-icon">📊</div>
+                    <h3>Nivell</h3>
+                    <p>Formació professional de grau superior</p>
+                </div>
+                <div class="card profile-card">
+                    <div class="profile-icon">💻</div>
+                    <h3>Família professional</h3>
+                    <p>Informàtica i comunicacions</p>
+                </div>
+                <div class="card profile-card">
+                    <div class="profile-icon">⏱️</div>
+                    <h3>Durada</h3>
+                    <p>2.000 hores</p>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 1.5rem; text-align: center;">
+                <div class="card-label"
+                    style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-secondary); margin-bottom: 0.75rem;">
+                    Competència general</div>
+                <p
+                    style="color: var(--text-secondary); font-size: 1rem; line-height: 1.8; max-width: 700px; margin: 0 auto;">
+                    Configurar, administrar i mantenir sistemes informàtics, garantint la funcionalitat, la integritat
+                    dels recursos i serveis del sistema, amb la qualitat exigida i complint la reglamentació vigent.</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="reveal">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-code"></i></div>
+                <h2>Competències i Habilitats</h2>
+                <p>Les meves capacitats tècniques i personals</p>
+            </div>
+            <div class="skills-grid">
+                <div class="card skill-category">
+                    <h3><i class="fas fa-laptop-code" style="color: var(--accent-secondary);"></i> Aptituds Tècniques
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-code"></i> Programació</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> Base de dades</span>
+                        <span class="skill-tag"><i class="fab fa-windows"></i> Windows</span>
+                        <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
+                        <span class="skill-tag"><i class="fas fa-file-word"></i> Ofimàtica Office</span>
+                        <span class="skill-tag"><i class="fas fa-network-wired"></i> Xarxes</span>
+                        <span class="skill-tag"><i class="fas fa-users"></i> Treball en equip</span>
+                    </div>
+                </div>
+                <div class="card skill-category">
+                    <h3><i class="fas fa-brain" style="color: var(--accent-secondary);"></i> Habilitats Personals</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-check-circle"></i> Organitzat</span>
+                        <span class="skill-tag"><i class="fas fa-eye"></i> Atent</span>
+                        <span class="skill-tag"><i class="fas fa-shield-alt"></i> Responsable</span>
+                        <span class="skill-tag"><i class="fas fa-hammer"></i> Treballador</span>
+                        <span class="skill-tag"><i class="fas fa-heart"></i> Empatia</span>
+                        <span class="skill-tag"><i class="fas fa-smile"></i> Amabilitat</span>
+                        <span class="skill-tag"><i class="fas fa-handshake"></i> Respecte</span>
+                        <span class="skill-tag"><i class="fas fa-comments"></i> Comunicació</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages Section -->
+        <section id="languages" class="reveal">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-globe"></i></div>
+                <h2>Idiomes</h2>
+                <p>Competències lingüístiques</p>
+            </div>
+            <div class="languages-grid">
+                <div class="card language-card">
+                    <div class="language-name">🇪🇸 Castellà</div>
+                    <span class="language-level level-native">Natiu</span>
+                    <div class="language-bar-container">
+                        <div class="language-bar bar-native"></div>
+                    </div>
+                </div>
+                <div class="card language-card">
+                    <div class="language-name">🏴 Català</div>
+                    <span class="language-level level-native">Natiu</span>
+                    <div class="language-bar-container">
+                        <div class="language-bar bar-native"></div>
+                    </div>
+                </div>
+                <div class="card language-card">
+                    <div class="language-name">🇬🇧 Anglès</div>
+                    <span class="language-level level-b1">Mitjà — B1</span>
+                    <div class="language-bar-container">
+                        <div class="language-bar bar-b1"></div>
+                    </div>
+                </div>
+                <div class="card language-card">
+                    <div class="language-name">🇵🇹 Portuguès</div>
+                    <span class="language-level level-basic">Baix</span>
+                    <div class="language-bar-container">
+                        <div class="language-bar bar-basic"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="reveal">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-certificate"></i></div>
+                <h2>Certificats</h2>
+                <p>Formació complementària i certificacions</p>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fab fa-linux"></i></div>
+                    <span class="cert-name">Administració Bàsica de Sistemes Linux</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+                    <span class="cert-name">Introducció a les Xarxes</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fab fa-windows"></i></div>
+                    <span class="cert-name">Administració Bàsica de Sistemes en Windows 10</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-code"></i></div>
+                    <span class="cert-name">Introducció a HTML i a CSS</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-desktop"></i></div>
+                    <span class="cert-name">Elaboració de Presentacions amb PowerPoint</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-envelope-open-text"></i></div>
+                    <span class="cert-name">Gestió de Correu i Agenda amb Outlook</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-database"></i></div>
+                    <span class="cert-name">Elaboració d'Aplicacions amb Bases de Dades amb Access</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-table"></i></div>
+                    <span class="cert-name">Elaboració Avançada de Fulls de Càlcul amb Excel</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-file-word"></i></div>
+                    <span class="cert-name">Elaboració Avançada de Documents de Text amb Word</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-server"></i></div>
+                    <span class="cert-name">DHCP i DNS — Implantació amb Windows Server 2019</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-globe"></i></div>
+                    <span class="cert-name">Serveis Web — Implantació amb IIS</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-cogs"></i></div>
+                    <span class="cert-name">Administració Bàsica de Windows Server 2019</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-hashtag"></i></div>
+                    <span class="cert-name">Principis de la Programació en C#</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-gamepad"></i></div>
+                    <span class="cert-name">Introducció a la Programació i al Motor de Unity</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+                    <span class="cert-name">Introducció als Firewalls de Xarxa amb pfSense</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objectives Section -->
+        <section id="objectives" class="reveal">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-bullseye"></i></div>
+                <h2>Objectius Professionals</h2>
+                <p>On vull arribar professionalment</p>
+            </div>
+            <div class="card objectives-card">
+                <h3>🎯 Meta</h3>
+                <p>El meu objectiu és consolidar-me com a administrador de sistemes i xarxes, aportant solucions tècniques eficients i assegurant la continuïtat de negoci en entorns de mitjana i gran empresa.</p>
+                <h3>🗺️ Itinerari</h3>
+                <p>Actualment estic centrat en la finalització del CFGS d'ASIX (2026) per obtenir les certificacions i coneixements avançats necessaris per afrontar reptes en infraestructures crítiques.</p>
+            </div>
+        </section>
+
+        <!-- CV Section -->
+        <section id="cv" class="reveal">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-file-alt"></i></div>
+                <h2>Currículum Vitae</h2>
+                <p>Fes clic per veure en gran</p>
+            </div>
+            <div class="cv-grid">
+                <div class="card cv-card" onclick="openLightbox('CurriulumCatalaCV.jpg')">
+                    <img src="CurriulumCatalaCV.jpg" alt="CV en Català" loading="lazy">
+                    <h3>CV Català</h3>
+                </div>
+                <div class="card cv-card" onclick="openLightbox('EuropassCV.jpg')">
+                    <img src="EuropassCV.jpg" alt="CV Europass" loading="lazy">
+                    <h3>CV Europass</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="reveal">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-paper-plane"></i></div>
+                <h2>Contacte</h2>
+                <p>No dubtis en contactar-me</p>
+            </div>
+            <div class="contact-grid">
+                <a href="mailto:a.pica@sapalomera.cat" class="card contact-card">
+                    <div class="contact-icon email"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <div class="contact-label">Correu Institucional</div>
+                        <div class="contact-value">a.pica@sapalomera.cat</div>
+                    </div>
+                </a>
+                <a href="mailto:alexpicacastro@gmail.com" class="card contact-card">
+                    <div class="contact-icon email"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <div class="contact-label">Correu Personal</div>
+                        <div class="contact-value">alexpicacastro@gmail.com</div>
+                    </div>
+                </a>
+                <a href="tel:+34640908980" class="card contact-card">
+                    <div class="contact-icon phone"><i class="fas fa-phone"></i></div>
+                    <div>
+                        <div class="contact-label">Telèfon</div>
+                        <div class="contact-value">640 908 980</div>
+                    </div>
+                </a>
+                <a href="https://github.com/alexpicacastro" target="_blank" class="card contact-card">
+                    <div class="contact-icon github"><i class="fab fa-github"></i></div>
+                    <div>
+                        <div class="contact-label">GitHub</div>
+                        <div class="contact-value">alexpicacastro</div>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/alexpicacastro/" target="_blank" class="card contact-card">
+                    <div class="contact-icon linkedin"><i class="fab fa-linkedin"></i></div>
+                    <div>
+                        <div class="contact-label">LinkedIn</div>
+                        <div class="contact-value">alexpicacastro</div>
+                    </div>
+                </a>
+                <a href="https://apica3.wixsite.com/website" target="_blank" class="card contact-card">
+                    <div class="contact-icon web"><i class="fas fa-globe"></i></div>
+                    <div>
+                        <div class="contact-label">Web Personal</div>
+                        <div class="contact-value">apica3.wixsite.com</div>
+                    </div>
+                </a>
+            </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 Àlex Pica Castro — IPOP · Informe Personal d'Orientació Professional</p>
+        <p>© 2026 <span class="footer-name">Àlex Pica Castro</span> — IPOP · Informe Personal d'Orientació Professional
+        </p>
     </footer>
 
     <!-- Lightbox -->
@@ -463,26 +1308,68 @@
         <button class="lightbox-close" onclick="closeLightbox()">
             <i class="fas fa-times"></i>
         </button>
-        <img id="lightbox-img" src="" alt="Captura ampliada">
+        <img id="lightbox-img" src="" alt="CV ampliada">
     </div>
 
     <script>
-        // Lightbox
+        // ===== Mobile Navigation =====
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Close nav when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // ===== Scroll Reveal =====
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // ===== Lightbox =====
         function openLightbox(src) {
             const lightbox = document.getElementById('lightbox');
-            document.getElementById('lightbox-img').src = src;
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
             document.body.style.overflow = '';
         }
 
+        // Close with Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeLightbox();
         });
+
+        // ===== Navbar background on scroll =====
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(15, 23, 42, 0.95)';
+            } else {
+                nav.style.background = 'rgba(15, 23, 42, 0.85)';
+            }
+        });
     </script>
 </body>
+
 </html>
