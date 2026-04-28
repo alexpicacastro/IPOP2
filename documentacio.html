@@ -272,11 +272,8 @@
             border: none;
         }
 
-        .lightbox-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
 
-        /* ===== Footer ===== */
+        /* ===== Responsive ===== */
         footer {
             text-align: center;
             padding: 2rem 1.5rem;
@@ -452,6 +449,32 @@
     <footer>
         <p>© 2026 Àlex Pica Castro — IPOP · Informe Personal d'Orientació Professional</p>
     </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close">&times;</button>
+        <img id="lightbox-img" src="" alt="Ampliació">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
 </body>
 
 </html>
