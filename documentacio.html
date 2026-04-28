@@ -13,18 +13,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* ===== CSS Variables & Reset ===== */
+        /* Variables de disseny compartides */
         :root {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
+            --bg-primary: #0f172a;   /* Color de fons fosc */
+            --bg-secondary: #1e293b; /* Color per les seccions */
             --bg-card: #1e293b;
-            --border-card: #334155;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
+            --border-card: #334155;  /* Vores discretes */
+            --text-primary: #f8fafc; /* Color de text blanc */
+            --text-secondary: #94a3b8; /* Gris per textos secundaris */
             --text-muted: #64748b;
-            --accent-primary: #3b82f6;
+            --accent-primary: #3b82f6; /* Blau d'accent */
             --accent-secondary: #60a5fa;
             --radius: 8px;
-            --transition: none;
+            --transition: none;      /* Estil pla sense animacions */
         }
 
         *,
@@ -180,13 +181,15 @@
             line-height: 1.8;
         }
 
+        /* Estil per als fragments de codi (inline) */
         code {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.2rem 0.4rem;
+            background: #27303f;
+            padding: 0.15rem 0.4rem;
             border-radius: 4px;
-            font-family: monospace;
+            font-family: 'Consolas', 'Monaco', monospace;
             font-size: 0.9em;
-            color: #fbbf24;
+            color: #ecf0f1;
+            border: 1px solid #3e4c5a;
         }
 
         .img-block {
@@ -313,13 +316,11 @@
 
     <main>
         <h1>Manual d'Usuari</h1>
-        <p class="subtitle">Documentació oficial i manual d'instruccions per a l'aplicació del Projecte Hospital
-            (Serveis 24-25).</p>
+        <p class="subtitle">En aquesta guia t'explico pas a pas com funciona i com pots treure profit de l'aplicació que he desenvolupat per al Projecte Hospital.</p>
 
         <section class="doc-section">
             <h2><i class="fas fa-play-circle"></i> 1. Inici i Login</h2>
-            <p>Per començar, tenim el primer fitxer que utilitzarem durant tot el programa que és el
-                <code>main.py</code>. Aquest fitxer controla el menú principal en tot moment.</p>
+            <p>El cor del programa és el fitxer <code>main.py</code>. És el primer que hem d'executar, ja que s'encarrega de gestionar el menú principal i coordinar tota la resta de funcions.</p>
             <p>De primeres hem d'executar el programa i ens surt aquest menú d'inici de sessió:</p>
 
             <div class="img-block">
@@ -333,7 +334,7 @@
 
             <div
                 style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 1rem; border-radius: 4px; margin: 1.5rem 0;">
-                <p style="margin: 0; color: #f1f5f9;"><strong>💡 Nota per provar el programa:</strong> Pots utilitzar
+                <p style="margin: 0; color: #f1f5f9;"><strong>Nota per provar el programa:</strong> Pots utilitzar
                     l'usuari <code>admin</code> i la contrasenya <code>admin</code> per accedir i testejar totes les
                     funcionalitats de l'aplicació.</p>
             </div>
