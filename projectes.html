@@ -534,6 +534,55 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
+        /* ===== Lightbox ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            cursor: pointer;
+        }
+
+        /* ===== Lightbox ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            cursor: pointer;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            color: white;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
         /* ===== Responsive ===== */
         @media (max-width: 768px) {
             .nav-links {
@@ -742,10 +791,8 @@
 
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>© 2026 <span class="footer-name">Àlex Pica Castro</span> — IPOP · Informe Personal d'Orientació Professional
-        </p>
+        <p>© 2026 Àlex Pica Castro — IPOP · Informe Personal d'Orientació Professional</p>
         <p style="margin-top: 0.5rem;">
             <a href="index.html" style="color: var(--accent-secondary); text-decoration: none; font-size: 0.85rem;">
                 Tornar a l'inici
@@ -753,7 +800,30 @@
         </p>
     </footer>
 
-    <footer>
-        <p>© 2026 Àlex Pica Castro — IPOP · Informe Personal d'Orientació Professional</p>
-    </footer>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close">&times;</button>
+        <img id="lightbox-img" src="" alt="Ampliació">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
 </body>
+</html>
