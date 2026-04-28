@@ -19,7 +19,7 @@
             --bg-primary: #0f172a;
             --bg-secondary: #1e293b;
             --bg-card: #1e293b;
-            --border-card: rgba(148, 163, 184, 0.1);
+            --border-card: #334155;
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
@@ -49,7 +49,7 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
+        /* Eliminades animacions i orbes per simplicitat */
 
         /* ===== Navigation ===== */
         .nav {
@@ -58,7 +58,7 @@
             left: 0;
             right: 0;
             z-index: 100;
-            background: rgba(15, 23, 42, 0.95);
+            background: var(--bg-primary);
             border-bottom: 1px solid var(--border-card);
             transition: var(--transition);
         }
@@ -98,7 +98,7 @@
 
         .nav-links a:hover {
             color: var(--text-primary);
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(99, 102, 241, 0.1);
         }
 
         .nav-toggle {
@@ -134,7 +134,21 @@
         }
 
         .hero-content {
-            /* Eliminada animació per semblar més natural */
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: var(--accent-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
         }
 
         .hero h1 {
@@ -181,7 +195,6 @@
         .btn-primary {
             background: var(--accent-primary);
             color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .btn-primary:hover {
@@ -195,11 +208,22 @@
         }
 
         .btn-outline:hover {
-            background: rgba(59, 130, 246, 0.05);
+            background: rgba(99, 102, 241, 0.1);
             border-color: var(--accent-primary);
+            transform: translateY(-2px);
         }
 
-        /* Eliminades animacions de fade in */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         /* ===== Section Headers ===== */
         .section-header {
@@ -226,7 +250,7 @@
             width: 48px;
             height: 48px;
             border-radius: 14px;
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(99, 102, 241, 0.1);
             color: var(--accent-secondary);
             font-size: 1.2rem;
             margin-bottom: 1rem;
@@ -234,10 +258,11 @@
 
         /* ===== Cards ===== */
         .card {
-            background: var(--bg-secondary);
+            background: var(--bg-card);
             border: 1px solid var(--border-card);
             border-radius: var(--radius);
             padding: 2rem;
+            transition: var(--transition);
         }
 
         .card:hover {
@@ -302,7 +327,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: var(--accent-primary);
+            background: linear-gradient(to bottom, var(--accent-primary), transparent);
         }
 
         .timeline-item {
@@ -344,8 +369,8 @@
             margin-top: 0.5rem;
             padding: 0.2rem 0.7rem;
             border-radius: 50px;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
             color: var(--accent-secondary);
             font-size: 0.75rem;
             font-weight: 600;
@@ -364,7 +389,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: var(--accent-primary);
+            background: var(--gradient-2);
         }
 
         .experience-card h3 {
@@ -452,8 +477,8 @@
             gap: 0.4rem;
             padding: 0.5rem 1rem;
             border-radius: 8px;
-            background: rgba(59, 130, 246, 0.05);
-            border: 1px solid rgba(59, 130, 246, 0.1);
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.15);
             color: var(--text-secondary);
             font-size: 0.85rem;
             font-weight: 500;
@@ -462,8 +487,8 @@
         }
 
         .skill-tag:hover {
-            background: rgba(59, 130, 246, 0.15);
-            border-color: rgba(59, 130, 246, 0.35);
+            background: rgba(99, 102, 241, 0.15);
+            border-color: rgba(99, 102, 241, 0.35);
             color: var(--text-primary);
             transform: translateY(-2px);
         }
@@ -539,12 +564,12 @@
 
         .bar-b1 {
             width: 60%;
-            background: var(--accent-secondary);
+            background: var(--gradient-2);
         }
 
         .bar-basic {
             width: 30%;
-            background: var(--text-muted);
+            background: var(--accent-primary);
         }
 
         /* ===== Certificates ===== */
@@ -566,7 +591,8 @@
         }
 
         .cert-item:hover {
-            border-color: var(--accent-primary);
+            border-color: var(--border-card-hover);
+            transform: translateX(6px);
         }
 
         .cert-icon {
@@ -574,7 +600,7 @@
             width: 40px;
             height: 40px;
             border-radius: 10px;
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(99, 102, 241, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -601,7 +627,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: var(--accent-primary);
+            background: var(--gradient-3);
         }
 
         .objectives-card h3 {
@@ -648,7 +674,7 @@
         }
 
         .contact-card .contact-icon.email {
-            background: rgba(59, 130, 246, 0.15);
+            background: rgba(99, 102, 241, 0.15);
             color: #818cf8;
         }
 
@@ -850,13 +876,23 @@
                 <li><a href="#contact">Contacte</a></li>
             </ul>
         </div>
-      <main>
+    </nav>
+
+    <main>
         <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="hero-content">
-                <h1>Sóc Àlex Pica Castro</h1>
+                <div class="hero-badge">
+                    <i class="fas fa-graduation-cap"></i>
+                    CFGS ASIX — En curs
+                </div>
+                <h1>
+                    Sóc <span class="gradient-text">Àlex Pica Castro</span><br>
+                    Tècnic en Sistemes
+                </h1>
                 <p class="hero-subtitle">
-                    Tècnic en Sistemes Microinformàtics i Xarxes i estudiant de 2n d'ASIX. Persona proactiva, responsable i amb gran interès en l'administració de sistemes, xarxes i ciberseguretat.
+                    Persona proactiva, responsable i amb gran interès en l'administració de sistemes, xarxes i
+                    ciberseguretat. Actualment cursant ASIX a l'Institut Sapalomera.
                 </p>
                 <div class="hero-links">
                     <a href="#contact" class="btn btn-primary">
@@ -865,12 +901,15 @@
                     <a href="projectes.html" class="btn btn-outline">
                         <i class="fas fa-folder-open"></i> Projectes
                     </a>
+                    <a href="#cv" class="btn btn-outline">
+                        <i class="fas fa-file-alt"></i> Veure CV
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about">
+        <section id="about" class="reveal">
             <div class="section-header">
                 <div class="section-icon"><i class="fas fa-user"></i></div>
                 <h2>Qui soc jo?</h2>
@@ -879,13 +918,16 @@
             <div class="about-grid">
                 <div class="card about-card about-intro">
                     <div class="card-label">Presentació</div>
-                    <p>Em dic Àlex Pica Castro i sóc tècnic en Sistemes Microinformàtics i Xarxes amb formació en l'administració de sistemes informàtics. Després d'haver fet el grau mitjà en SMX, actualment estic cursant el grau superior en Administració de Sistemes Informàtics en Xarxa (ASIX). Sóc una persona proactiva, responsable i amb gran interès en l'administració de sistemes, xarxes i ciberseguretat.</p>
+                    <p>Em dic Àlex Pica Castro i sóc tècnic en Sistemes Microinformàtics i Xarxes amb formació en
+                        l'administració de sistemes informàtics. Després d'haver fet el grau mitjà en SMX, actualment
+                        estic cursant el grau superior en Administració de Sistemes Informàtics en Xarxa (ASIX). Persona
+                        proactiva, responsable i amb gran interès en l'administració de sistemes, xarxes i
+                        ciberseguretat.</p>
                 </div>
-            </div>
         </section>
 
         <!-- Education Section -->
-        <section id="education">
+        <section id="education" class="reveal">
             <div class="section-header">
                 <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
                 <h2>Formació Acadèmica</h2>
@@ -894,28 +936,46 @@
             <div class="card">
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-period">2024 — 2026</div>
-                        <h3 class="timeline-title">CFGS Administració de Sistemes Informàtics en Xarxa (ASIX)</h3>
-                        <p class="timeline-subtitle">Institut Sapalomera, Blanes</p>
-                        <span class="timeline-badge">En curs</span>
+                        <div class="timeline-period">2023 — 2026</div>
+                        <div class="timeline-title">CFGS Administració de Sistemes Informàtics en Xarxa (ASIX)</div>
+                        <div class="timeline-subtitle">Institut Sapalomera</div>
+                        <span class="timeline-badge">EQF 5 — En curs</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-period">2022 — 2024</div>
-                        <h3 class="timeline-title">CFGM Sistemes Microinformàtics i Xarxes (SMX)</h3>
-                        <p class="timeline-subtitle">Institut Sapalomera, Blanes</p>
-                        <span class="timeline-badge">Finalitzat</span>
+                        <div class="timeline-period">2021 — 2023</div>
+                        <div class="timeline-title">CFGM Sistemes Microinformàtics i Xarxes (SMX)</div>
+                        <div class="timeline-subtitle">Institut Sa Palomera</div>
+                        <span class="timeline-badge">EQF 4</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-period">2017 — 2021</div>
+                        <div class="timeline-title">Educació Secundària Obligatòria (ESO)</div>
+                        <div class="timeline-subtitle">IES Serrallarga</div>
+                        <span class="timeline-badge">EQF 3</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience">
+        <section id="experience" class="reveal">
             <div class="section-header">
                 <div class="section-icon"><i class="fas fa-briefcase"></i></div>
                 <h2>Experiència Laboral</h2>
                 <p>On he posat en pràctica els meus coneixements</p>
             </div>
+            <div class="card experience-card">
+                <h3>Tècnic en Sistemes</h3>
+                <div class="role-company">
+                    <i class="fas fa-building"></i> Institut S'Agulla, Blanes — Pràctiques (2022–2023)
+                </div>
+                <ul>
+                    <li>Instal·lació i configuració de sistemes operatius Windows i Linux</li>
+                    <li>Manteniment i administració de xarxes locals</li>
+                    <li>Resolució de problemes de hardware i software</li>
+                </ul>
+            </div>
+            <div class="card experience-card">
                 <h3>Desenvolupador i Tècnic de Sistemes</h3>
                 <div class="role-company">
                     <i class="fas fa-building"></i> Orbitwave, Portugal — Erasmus+ (2024–2025)
@@ -931,7 +991,7 @@
         </section>
 
         <!-- Professional Profile -->
-        <section id="profile">
+        <section id="profile" class="reveal">
             <div class="section-header">
                 <div class="section-icon"><i class="fas fa-id-card"></i></div>
                 <h2>Perfil Professional</h2>
@@ -939,22 +999,22 @@
             </div>
             <div class="profile-grid">
                 <div class="card profile-card">
-                    <div class="profile-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="profile-icon">🎓</div>
                     <h3>Títol</h3>
                     <p>Administració de sistemes informàtics en xarxa</p>
                 </div>
                 <div class="card profile-card">
-                    <div class="profile-icon"><i class="fas fa-layer-group"></i></div>
+                    <div class="profile-icon">📊</div>
                     <h3>Nivell</h3>
                     <p>Formació professional de grau superior</p>
                 </div>
                 <div class="card profile-card">
-                    <div class="profile-icon"><i class="fas fa-laptop"></i></div>
+                    <div class="profile-icon">💻</div>
                     <h3>Família professional</h3>
                     <p>Informàtica i comunicacions</p>
                 </div>
                 <div class="card profile-card">
-                    <div class="profile-icon"><i class="fas fa-clock"></i></div>
+                    <div class="profile-icon">⏱️</div>
                     <h3>Durada</h3>
                     <p>2.000 hores</p>
                 </div>
@@ -971,7 +1031,7 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills">
+        <section id="skills" class="reveal">
             <div class="section-header">
                 <div class="section-icon"><i class="fas fa-code"></i></div>
                 <h2>Competències i Habilitats</h2>
@@ -1008,7 +1068,7 @@
         </section>
 
         <!-- Languages Section -->
-        <section id="languages">
+        <section id="languages" class="reveal">
             <div class="section-header">
                 <div class="section-icon"><i class="fas fa-globe"></i></div>
                 <h2>Idiomes</h2>
@@ -1016,28 +1076,28 @@
             </div>
             <div class="languages-grid">
                 <div class="card language-card">
-                    <div class="language-name">Castellà</div>
+                    <div class="language-name">🇪🇸 Castellà</div>
                     <span class="language-level level-native">Natiu</span>
                     <div class="language-bar-container">
                         <div class="language-bar bar-native"></div>
                     </div>
                 </div>
                 <div class="card language-card">
-                    <div class="language-name">Català</div>
+                    <div class="language-name">🏴 Català</div>
                     <span class="language-level level-native">Natiu</span>
                     <div class="language-bar-container">
                         <div class="language-bar bar-native"></div>
                     </div>
                 </div>
                 <div class="card language-card">
-                    <div class="language-name">Anglès</div>
+                    <div class="language-name">🇬🇧 Anglès</div>
                     <span class="language-level level-b1">Mitjà — B1</span>
                     <div class="language-bar-container">
                         <div class="language-bar bar-b1"></div>
                     </div>
                 </div>
                 <div class="card language-card">
-                    <div class="language-name">Portuguès</div>
+                    <div class="language-name">🇵🇹 Portuguès</div>
                     <span class="language-level level-basic">Baix</span>
                     <div class="language-bar-container">
                         <div class="language-bar bar-basic"></div>
@@ -1047,7 +1107,7 @@
         </section>
 
         <!-- Certificates Section -->
-        <section id="certificates">
+        <section id="certificates" class="reveal">
             <div class="section-header">
                 <div class="section-icon"><i class="fas fa-certificate"></i></div>
                 <h2>Certificats</h2>
@@ -1118,22 +1178,24 @@
         </section>
 
         <!-- Objectives Section -->
-        <section id="objectives">
+        <section id="objectives" class="reveal">
             <div class="section-header">
                 <div class="section-icon"><i class="fas fa-bullseye"></i></div>
                 <h2>Objectius Professionals</h2>
                 <p>On vull arribar professionalment</p>
             </div>
             <div class="card objectives-card">
-                <h3>Objectiu Principal</h3>
-                <p>El meu objectiu és consolidar-me com a administrador de sistemes i xarxes, aportant solucions tècniques eficients i assegurant la continuïtat de negoci en entorns de mitjana i gran empresa.</p>
-                <h3>Itinerari Professional</h3>
-                <p>Actualment estic centrat en la finalització del CFGS d'ASIX (2026) per obtenir les certificacions i coneixements avançats necessaris per afrontar reptes en infraestructures crítiques.</p>
+                <h3>🎯 Meta</h3>
+                <p>Especialitzar-me en administració de sistemes i xarxes amb l'objectiu de treballar com a
+                    administrador de sistemes o tècnic de xarxes dins de mitjanes o grans empresas.</p>
+                <h3>🗺️ Itinerari</h3>
+                <p>El pla actual es centra en finalitzar amb èxit el CFGS d'ASIX el 2026 per consolidar el perfil
+                    tècnic.</p>
             </div>
         </section>
 
         <!-- CV Section -->
-        <section id="cv">
+        <section id="cv" class="reveal">
             <div class="section-header">
                 <div class="section-icon"><i class="fas fa-file-alt"></i></div>
                 <h2>Currículum Vitae</h2>
@@ -1152,7 +1214,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact">
+        <section id="contact" class="reveal">
             <div class="section-header">
                 <div class="section-icon"><i class="fas fa-paper-plane"></i></div>
                 <h2>Contacte</h2>
@@ -1232,7 +1294,21 @@
             });
         });
 
-        /* Eliminat el sistema de scroll reveal per simplicitat */
+        // ===== Scroll Reveal =====
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => observer.observe(el));
 
         // ===== Lightbox =====
         function openLightbox(src) {
@@ -1258,9 +1334,9 @@
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('nav');
             if (window.scrollY > 50) {
-                nav.style.background = '#0f172a';
+                nav.style.background = 'rgba(10, 14, 23, 0.95)';
             } else {
-                nav.style.background = '#0f172a';
+                nav.style.background = 'rgba(10, 14, 23, 0.85)';
             }
         });
     </script>
