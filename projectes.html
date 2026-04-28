@@ -26,7 +26,7 @@
             --accent-primary: #3b82f6;
             --accent-secondary: #60a5fa;
             --radius: 8px;
-            --transition: all 0.2s ease;
+            --transition: none;
         }
 
         *,
@@ -49,7 +49,10 @@
             overflow-x: hidden;
         }
 
-        /* Orbes i efectes eliminats */
+        /* Desactivar efectes de fons */
+        .bg-effects {
+            display: none;
+        }
 
         /* ===== Navigation ===== */
         .nav {
@@ -58,11 +61,8 @@
             left: 0;
             right: 0;
             z-index: 100;
-            padding: 1rem 2rem;
-            backdrop-filter: blur(20px);
-            background: rgba(10, 14, 23, 0.85);
+            background: var(--bg-primary);
             border-bottom: 1px solid var(--border-card);
-            transition: var(--transition);
         }
 
         .nav-inner {
@@ -215,11 +215,10 @@
 
         /* ===== Cards ===== */
         .card {
-            background: var(--bg-card);
+            background: var(--bg-secondary);
             border: 1px solid var(--border-card);
             border-radius: var(--radius);
             padding: 2rem;
-            transition: var(--transition);
         }
 
         .card:hover {
@@ -242,48 +241,41 @@
         }
 
         .btn-primary {
-            background: var(--gradient-1);
+            background: var(--accent-primary);
             color: white;
-
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-
+            background: var(--accent-secondary);
         }
 
         .btn-outline {
             background: transparent;
             color: var(--text-primary);
-            border: 1px solid var(--border-card-hover);
+            border: 1px solid var(--border-card);
         }
 
         .btn-outline:hover {
-            background: rgba(99, 102, 241, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             border-color: var(--accent-primary);
-            transform: translateY(-2px);
         }
 
         .btn-hospital {
-            background: var(--gradient-hospital);
+            background: #10b981;
             color: white;
-
         }
 
         .btn-hospital:hover {
-            transform: translateY(-2px);
-
+            background: #059669;
         }
 
         .btn-wix {
-            background: var(--gradient-wix);
+            background: #8b5cf6;
             color: white;
-
         }
 
         .btn-wix:hover {
-            transform: translateY(-2px);
-
+            background: #7c3aed;
         }
 
         /* ===== Project Cards ===== */
@@ -307,11 +299,11 @@
         }
 
         .project-hero-gradient.hospital {
-            background: #10b981;
+            background: var(--gradient-hospital);
         }
 
         .project-hero-gradient.wix {
-            background: #8b5cf6;
+            background: var(--gradient-wix);
         }
 
         .project-header-content {
@@ -499,7 +491,10 @@
         }
 
         .tech-item:hover {
-            background: var(--accent-primary);
+            background: rgba(99, 102, 241, 0.15);
+            border-color: rgba(99, 102, 241, 0.35);
+            color: var(--text-primary);
+            transform: translateY(-2px);
         }
 
         /* ===== Footer ===== */
@@ -527,7 +522,8 @@
 
         /* ===== Scroll Animations ===== */
         .reveal {
-            opacity: 1;
+            opacity: 1 !important;
+            transform: none !important;
         }
 
         /* ===== Lightbox ===== */
@@ -553,7 +549,7 @@
             max-height: 90vh;
             object-fit: contain;
             border-radius: var(--radius);
-
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
         }
 
         .lightbox-close {
@@ -613,6 +609,13 @@
 </head>
 
 <body>
+
+    <!-- Background Effects -->
+    <div class="bg-effects">
+        <div class="bg-orb"></div>
+        <div class="bg-orb"></div>
+        <div class="bg-orb"></div>
+    </div>
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
