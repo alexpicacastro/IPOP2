@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Projectes d'Àlex Pica Castro - Gestió hospitalària amb Python i PostgreSQL, Web personal amb Wix">
-    <meta name="author" content="Àlex Pica Castro">
-    <title>Projectes — Àlex Pica Castro</title>
+    <meta name="description" content="Manual d'Usuari - Projecte Hospital">
+    <title>Documentació Projecte Hospital — Àlex Pica Castro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
@@ -15,18 +13,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* ===== CSS Variables & Reset ===== */
+        /* Variables de disseny compartides */
         :root {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
+            --bg-primary: #0f172a;   /* Color de fons fosc */
+            --bg-secondary: #1e293b; /* Color per les seccions */
             --bg-card: #1e293b;
-            --border-card: #334155;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
+            --border-card: #334155;  /* Vores discretes */
+            --text-primary: #f8fafc; /* Color de text blanc */
+            --text-secondary: #94a3b8; /* Gris per textos secundaris */
             --text-muted: #64748b;
-            --accent-primary: #3b82f6;
+            --accent-primary: #3b82f6; /* Blau d'accent */
             --accent-secondary: #60a5fa;
             --radius: 8px;
-            --transition: none;
+            --transition: none;      /* Estil pla sense animacions */
         }
 
         *,
@@ -97,414 +96,133 @@
             border-radius: 8px;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
+        .nav-links a:hover {
             color: var(--text-primary);
             background: rgba(99, 102, 241, 0.1);
         }
 
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid var(--border-card);
+        }
+
+        .btn-back:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: var(--accent-primary);
         }
 
         /* ===== Main Content ===== */
         main {
             position: relative;
             z-index: 1;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 120px 1.5rem 4rem;
         }
 
-        /* ===== Hero Section ===== */
-        .hero {
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 100px;
-            padding-bottom: 2rem;
-        }
-
-        .hero-content {}
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            color: var(--accent-secondary);
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+        h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -2px;
-        }
-
-        .hero h1 .gradient-text {
-            color: var(--accent-secondary);
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-
-
-        /* ===== Section Headers ===== */
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            letter-spacing: -1px;
-        }
-
-        .section-header p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        .section-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--accent-secondary);
-            font-size: 1.2rem;
+            line-height: 1.2;
             margin-bottom: 1rem;
+            color: var(--accent-secondary);
+            text-align: center;
         }
 
-        /* ===== Cards ===== */
-        .card {
+        .subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== Documentation Content ===== */
+        .doc-section {
             background: var(--bg-secondary);
             border: 1px solid var(--border-card);
             border-radius: var(--radius);
-            padding: 2rem;
-        }
-
-        .card:hover {
-            border-color: var(--accent-primary);
-        }
-
-        /* ===== Buttons ===== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--accent-primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-secondary);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--border-card);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--accent-primary);
-        }
-
-        .btn-hospital {
-            background: #10b981;
-            color: white;
-        }
-
-        .btn-hospital:hover {
-            background: #059669;
-        }
-
-        .btn-wix {
-            background: #8b5cf6;
-            color: white;
-        }
-
-        .btn-wix:hover {
-            background: #7c3aed;
-        }
-
-        /* ===== Project Cards ===== */
-        .project-section {
-            margin-bottom: 6rem;
-        }
-
-        .project-hero {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--radius);
+            padding: 2.5rem;
             margin-bottom: 2rem;
         }
 
-        .project-hero-gradient {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-        }
-
-        .project-hero-gradient.hospital {
-            background: #10b981;
-        }
-
-        .project-hero-gradient.wix {
-            background: #8b5cf6;
-        }
-
-        .project-header-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .project-info h2 {
+        h2 {
             font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
-        }
-
-        .project-info .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            padding: 0.35rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .tag-python {
-            background: rgba(59, 130, 246, 0.12);
-            color: #60a5fa;
-            border: 1px solid rgba(59, 130, 246, 0.25);
-        }
-
-        .tag-postgresql {
-            background: rgba(99, 102, 241, 0.12);
-            color: #818cf8;
-            border: 1px solid rgba(99, 102, 241, 0.25);
-        }
-
-        .tag-security {
-            background: rgba(245, 158, 11, 0.12);
-            color: #fbbf24;
-            border: 1px solid rgba(245, 158, 11, 0.25);
-        }
-
-        .tag-xml {
-            background: rgba(16, 185, 129, 0.12);
-            color: #34d399;
-            border: 1px solid rgba(16, 185, 129, 0.25);
-        }
-
-        .tag-wix {
-            background: rgba(236, 72, 153, 0.12);
-            color: #f472b6;
-            border: 1px solid rgba(236, 72, 153, 0.25);
-        }
-
-        .tag-web {
-            background: rgba(139, 92, 246, 0.12);
-            color: #a78bfa;
-            border: 1px solid rgba(139, 92, 246, 0.25);
-        }
-
-        .tag-design {
-            background: rgba(244, 63, 94, 0.12);
-            color: #fb7185;
-            border: 1px solid rgba(244, 63, 94, 0.25);
-        }
-
-        .project-info p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.8;
+            color: var(--text-primary);
             margin-bottom: 1.5rem;
-        }
-
-        .project-image-container {
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            border: 1px solid var(--border-card);
-        }
-
-        .project-image-container img {
-            width: 100%;
-            display: block;
-
-        }
-
-        .project-image-container:hover img {}
-
-        /* ===== Feature Grid ===== */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .feature-card {
-            padding: 1.5rem;
-        }
-
-        .feature-card .feature-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--border-card);
+            padding-bottom: 0.75rem;
         }
 
-        .feature-icon.green {
-            background: rgba(16, 185, 129, 0.12);
-            color: #34d399;
+        h3 {
+            font-size: 1.3rem;
+            color: var(--accent-secondary);
+            margin: 2rem 0 1rem;
         }
 
-        .feature-icon.blue {
-            background: rgba(59, 130, 246, 0.12);
-            color: #60a5fa;
-        }
-
-        .feature-icon.purple {
-            background: rgba(139, 92, 246, 0.12);
-            color: #a78bfa;
-        }
-
-        .feature-icon.amber {
-            background: rgba(245, 158, 11, 0.12);
-            color: #fbbf24;
-        }
-
-        .feature-icon.pink {
-            background: rgba(236, 72, 153, 0.12);
-            color: #f472b6;
-        }
-
-        .feature-icon.cyan {
-            background: rgba(6, 182, 212, 0.12);
-            color: #22d3ee;
-        }
-
-        .feature-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-        }
-
-        .feature-card p {
+        p {
             color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
         }
 
-        /* ===== Tech Stack ===== */
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
+        /* Estil per als fragments de codi (inline) */
+        code {
+            background: #27303f;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #ecf0f1;
+            border: 1px solid #3e4c5a;
         }
 
-        .tech-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            background: rgba(99, 102, 241, 0.08);
-            border: 1px solid rgba(99, 102, 241, 0.15);
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            font-weight: 500;
-
-        }
-
-        .tech-item:hover {
-            background: rgba(99, 102, 241, 0.15);
-            border-color: rgba(99, 102, 241, 0.35);
-            color: var(--text-primary);
-        }
-
-        /* ===== Footer ===== */
-        footer {
-            position: relative;
-            z-index: 1;
+        .img-block {
+            margin: 2rem 0;
             text-align: center;
-            padding: 3rem 1.5rem;
-            border-top: 1px solid var(--border-card);
-            margin-top: 2rem;
         }
 
-        footer p {
-            color: var(--text-muted);
+        .img-block img {
+            max-width: 100%;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-card);
+            cursor: pointer;
+        }
+
+        .img-block img:hover {
+            border-color: var(--accent-secondary);
+        }
+
+        .img-caption {
             font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-style: italic;
         }
 
-        footer .footer-name {
-            color: var(--text-primary);
-            font-weight: 600;
+        ul {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
         }
 
-        /* ===== Scroll Animations ===== */
-        .reveal {
-            opacity: 1 !important;
-            transform: none !important;
+        li {
+            margin-bottom: 0.5rem;
         }
 
         /* ===== Lightbox ===== */
@@ -528,7 +246,7 @@
             max-width: 90%;
             max-height: 90vh;
             object-fit: contain;
-            border-radius: 4px;
+            border-radius: var(--radius);
         }
 
         .lightbox-close {
@@ -552,34 +270,27 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* ===== Responsive ===== */
+        /* ===== Footer ===== */
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid var(--border-card);
+            margin-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(10, 14, 23, 0.95);
-                flex-direction: column;
-                padding: 1rem;
-                border-bottom: 1px solid var(--border-card);
+            .doc-section {
+                padding: 1.5rem;
             }
 
-            .nav-links.active {
-                display: flex;
+            h2 {
+                font-size: 1.5rem;
             }
 
-            .nav-toggle {
-                display: block;
-            }
-
-            .project-header-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
+            h3 {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -591,207 +302,153 @@
     <div class="bg-effects">
         <div class="bg-orb"></div>
         <div class="bg-orb"></div>
-        <div class="bg-orb"></div>
     </div>
 
     <!-- Navigation -->
-    <nav class="nav" id="nav">
+    <nav class="nav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">AP</a>
-            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Inici</a></li>
-                <li><a href="projectes.html" class="active">Projectes</a></li>
-                <li><a href="#hospital">Hospital</a></li>
-                <li><a href="#wix">Web Wix</a></li>
-                <li><a href="index.html#contact">Contacte</a></li>
-            </ul>
+            <a href="projectes.html" class="btn-back">
+                <i class="fas fa-arrow-left"></i> Tornar a Projectes
+            </a>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-folder-open"></i>
-                    Portafoli de projectes
-                </div>
-                <h1>Els meus <span class="gradient-text">Projectes</span></h1>
-                <p class="hero-subtitle">
-                    Projectes realitzats durant la formació en ASIX que demostren les meves competències en programació,
-                    bases de dades, sistemes i disseny web.
-                </p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="#hospital" class="btn btn-hospital">
-                        <i class="fas fa-hospital"></i> Projecte Hospital
-                    </a>
-                    <a href="#wix" class="btn btn-wix">
-                        <i class="fas fa-globe"></i> Web Personal Wix
-                    </a>
-                </div>
+        <h1>Manual d'Usuari</h1>
+        <p class="subtitle">En aquesta guia t'explico pas a pas com funciona i com pots treure profit de l'aplicació que he desenvolupat per al Projecte Hospital.</p>
+
+        <section class="doc-section">
+            <h2><i class="fas fa-play-circle"></i> 1. Inici i Login</h2>
+            <p>El cor del programa és el fitxer <code>main.py</code>. És el primer que hem d'executar, ja que s'encarrega de gestionar el menú principal i coordinar tota la resta de funcions.</p>
+            <p>De primeres hem d'executar el programa i ens surt aquest menú d'inici de sessió:</p>
+
+            <div class="img-block">
+                <img src="img/Imagen1.png" alt="Menú d'inici" onclick="openLightbox(this.src)">
+                <div class="img-caption">Fig 1. Menú principal - Inici de sessió</div>
+            </div>
+
+            <p>Aquest sistema inicia sessió al programa amb codificació. Depenent de l'usuari amb el qual iniciem
+                sessió, tindrà els seus propis rols i permisos a la base de dades.</p>
+            <p>Et pregunta l'usuari per iniciar sessió i després la contrasenya.</p>
+
+            <div
+                style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 1rem; border-radius: 4px; margin: 1.5rem 0;">
+                <p style="margin: 0; color: #f1f5f9;"><strong>Nota per provar el programa:</strong> Pots utilitzar
+                    l'usuari <code>admin</code> i la contrasenya <code>admin</code> per accedir i testejar totes les
+                    funcionalitats de l'aplicació.</p>
+            </div>
+
+            <div class="img-block">
+                <img src="img/Imagen3.png" alt="Inserir contrasenya" onclick="openLightbox(this.src)">
+                <div class="img-caption">Fig 2. Sol·licitud de contrasenya xifrada</div>
+            </div>
+
+            <p>Si és tot correcte veurem el menú del programa. Si no és correcte, el programa avisarà que hem posat
+                malament l'usuari o la contrasenya.</p>
+        </section>
+
+        <section class="doc-section">
+            <h2><i class="fas fa-tools"></i> 2. Manteniments</h2>
+            <p>Confirmant que hem iniciat sessió amb l'usuari i contrasenya correctes ens sortirà aquest menú, des d'on
+                podrem mirar i executar l'usuari tenint en compte els permisos que té.</p>
+
+            <div class="img-block">
+                <img src="img/Imagen6.png" alt="Menú de manteniments" onclick="openLightbox(this.src)">
+                <div class="img-caption">Fig 3. Menú general del sistema</div>
+            </div>
+
+            <h3>1.1 Obtenir dependència infermeria</h3>
+            <p>Aquí podem posar el número del ID de la infermera i ens dirà si depèn d'una planta o d'un metge.</p>
+            <div class="img-block">
+                <img src="img/Imagen8.png" alt="Dependència Infermeria" onclick="openLightbox(this.src)">
+                <div class="img-caption">Fig 4. Consulta de dependència (Dependència d'un metge / planta)</div>
+            </div>
+
+            <h3>1.2 Informació del quiròfan</h3>
+            <p>Aquí podem veure el dia, el pacient que s'operarà, en quin quiròfan i quins metges i infermeres estaran
+                fent l'operació.</p>
+            <div class="img-block">
+                <img src="img/Imagen10.png" alt="Info quiròfan" onclick="openLightbox(this.src)">
+                <div class="img-caption">Fig 5. Informació detallada sobre operacions en quiròfans</div>
+            </div>
+
+            <h3>1.3 Informació de les visites i pacient</h3>
+            <p>Podrem accedir a la informació de les visites que hi ha en aquell dia (hora, nom del metge i nom del
+                pacient) o buscar la <strong>Informació completa d'un pacient</strong> (diagnòstics, receptes, etc.).
+            </p>
+            <div class="img-block">
+                <img src="img/Imagen13.png" alt="Info Pacient" onclick="openLightbox(this.src)">
+                <div class="img-caption">Fig 6. Historial de visites i ingressos d'un pacient específic</div>
+            </div>
+
+            <h3>1.7 Crear un nou usuari / pacient</h3>
+            <p>Aquí posem la informació del nou usuari com el DNI, contrasenya, i especialitat (metge, infermer/a o
+                personal vari) i automàticament se'l registrarà a la base de dades PostgreSQL amb el rol adequat.</p>
+            <div class="img-block">
+                <img src="img/Imagen15.png" alt="Creació usuari" onclick="openLightbox(this.src)">
+                <div class="img-caption">Fig 7. Procés d'alta d'un nou treballador</div>
             </div>
         </section>
 
-        <!-- ===== PROJECT 1: HOSPITAL ===== -->
-        <section id="hospital" class="project-section reveal">
-            <div class="card project-hero">
-                <div class="project-hero-gradient hospital"></div>
-                <div class="project-header-content" style="padding-top: 0.5rem;">
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="project-tag tag-python"><i class="fab fa-python"></i> Python</span>
-                            <span class="project-tag tag-postgresql"><i class="fas fa-database"></i> PostgreSQL</span>
-                            <span class="project-tag tag-security"><i class="fas fa-lock"></i> Criptografia</span>
-                            <span class="project-tag tag-xml"><i class="fas fa-file-code"></i> XML</span>
-                        </div>
-                        <h2>Projecte Hospital</h2>
-                        <p>
-                            Sistema complet de gestió hospitalària desenvolupat amb <strong>Python</strong> i
-                            <strong>PostgreSQL</strong>.
-                            Inclou gestió de pacients, metges, infermers, visites, operacions, quiròfans, habitacions,
-                            medicaments, generació d'informes i exportació de dades en XML.
-                            Amb autenticació xifrada mitjançant <strong>Fernet</strong> i sistema de rols amb permisos.
-                        </p>
-                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                            <a href="ProjecteHospital.zip" download class="btn btn-hospital">
-                                <i class="fas fa-download"></i> Descarregar Codi
-                            </a>
-                            <a href="documentacio.html" class="btn btn-outline">
-                                <i class="fas fa-book-open"></i> Veure Documentació
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-image-container" onclick="openLightbox('img/hospital_main.png')">
-                        <img src="img/hospital_main.png" alt="Menú principal del Projecte Hospital" loading="lazy">
-                    </div>
-                </div>
+        <section class="doc-section">
+            <h2><i class="fas fa-chart-line"></i> 3. Consultes i Informes</h2>
+            <p>Dins d'aquí podem aconseguir rànkings i consultes o informes que hi ha dins del nostre hospital.</p>
+
+            <div class="img-block">
+                <img src="img/Imagen17.png" alt="Menú consultes" onclick="openLightbox(this.src)">
+                <div class="img-caption">Fig 8. Menú d'informes i rànkings</div>
             </div>
 
-            <!-- Features -->
-            <div class="features-grid">
-                <div class="card feature-card">
-                    <div class="feature-icon green"><i class="fas fa-user-md"></i></div>
-                    <h3>Gestió de personal</h3>
-                    <p>Alta de metges, infermers i personal vari amb assignació de rols PostgreSQL i permisos
-                        específics.</p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon blue"><i class="fas fa-procedures"></i></div>
-                    <h3>Pacients i visites</h3>
-                    <p>Registre de pacients, historial de visites, diagnòstics, medicaments receptats i ingressos
-                        hospitalaris.</p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon purple"><i class="fas fa-syringe"></i></div>
-                    <h3>Operacions i quiròfans</h3>
-                    <p>Planificació d'operacions amb reserva de quiròfans, equipament mèdic i assignació de personal.
-                    </p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon amber"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Seguretat i xifrat</h3>
-                    <p>Autenticació segura amb credencials xifrades amb Fernet. Creació de rols i permisos a PostgreSQL.
-                    </p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon pink"><i class="fas fa-chart-bar"></i></div>
-                    <h3>Informes i rànkings</h3>
-                    <p>Rànking de metges per visites, rànking de malalties, informes de personal i plantes
-                        hospitalàries.</p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon cyan"><i class="fas fa-file-export"></i></div>
-                    <h3>Exportació XML</h3>
-                    <p>Generació de fitxers XML amb dades de visites en un rang de dates, usant funcions XML de
-                        PostgreSQL.</p>
-                </div>
-            </div>
-
-            <!-- Tech Stack -->
-            <div class="card" style="margin-top: 1.5rem;">
-                <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">
-                    <i class="fas fa-tools" style="color: var(--accent-secondary);"></i> Stack Tecnològic
-                </h3>
-                <div class="tech-stack">
-                    <span class="tech-item"><i class="fab fa-python"></i> Python 3.11</span>
-                    <span class="tech-item"><i class="fas fa-database"></i> PostgreSQL</span>
-                    <span class="tech-item"><i class="fas fa-plug"></i> psycopg2</span>
-                    <span class="tech-item"><i class="fas fa-lock"></i> Fernet (cryptography)</span>
-                    <span class="tech-item"><i class="fas fa-file-code"></i> lxml / etree</span>
-                    <span class="tech-item"><i class="fas fa-file-csv"></i> CSV</span>
-                    <span class="tech-item"><i class="fas fa-random"></i> Faker (Dummy Data)</span>
-                    <span class="tech-item"><i class="fas fa-server"></i> Alta disponibilitat</span>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- ===== PROJECT 2: WIX WEBSITE ===== -->
-        <section id="wix" class="project-section reveal">
-            <div class="card project-hero">
-                <div class="project-hero-gradient wix"></div>
-                <div class="project-header-content" style="padding-top: 0.5rem;">
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="project-tag tag-wix"><i class="fab fa-wix"></i> Wix</span>
-                            <span class="project-tag tag-web"><i class="fas fa-palette"></i> Disseny Web</span>
-                            <span class="project-tag tag-design"><i class="fas fa-mobile-alt"></i> Responsive</span>
-                        </div>
-                        <h2>Web Personal — Wix</h2>
-                        <p>
-                            Pàgina web personal creada amb la plataforma <strong>Wix</strong>, dissenyada com a
-                            portafoli
-                            i carta de presentació professional. Inclou informació personal, formació, habilitats
-                            i experiència amb un disseny modern, atractiu i adaptat a dispositius mòbils.
-                        </p>
-                        <a href="https://apica3.wixsite.com/website" target="_blank" class="btn btn-wix">
-                            <i class="fas fa-external-link-alt"></i> Visitar la web
-                        </a>
-                    </div>
-                    <div class="project-image-container">
-                        <iframe src="https://apica3.wixsite.com/website"
-                            style="width: 100%; height: 350px; border: none; border-radius: 8px; pointer-events: none;"
-                            loading="lazy" title="Web Wix d'Àlex Pica"></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Features -->
-            <div class="features-grid">
-                <div class="card feature-card">
-                    <div class="feature-icon pink"><i class="fas fa-paint-brush"></i></div>
-                    <h3>Disseny visual</h3>
-                    <p>Disseny modern i professional amb una estètica cuidada, colors harmoniosos i tipografia elegant.
-                    </p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon purple"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Responsive</h3>
-                    <p>Adaptat a tots els dispositius: mòbils, tauletes i escriptoris per una experiència fluida.</p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon cyan"><i class="fas fa-id-badge"></i></div>
-                    <h3>Portafoli professional</h3>
-                    <p>Presentació personal com a carta de presentació amb formació, habilitats i objectius
-                        professionals.</p>
-                </div>
+            <h3>Rànking de metges i malalties</h3>
+            <p>Aquí surten els rànkings dels metges amb més visites de tot l'hospital i també les malalties més
+                freqüents registrades als diagnòstics.</p>
+            <div class="img-block">
+                <img src="img/Imagen21.png" alt="Rànking metges" onclick="openLightbox(this.src)">
+                <div class="img-caption">Fig 9. Resultats del rànking de visites per metge</div>
             </div>
         </section>
 
+        <section class="doc-section">
+            <h2><i class="fas fa-file-export"></i> 4. Exportació de dades (XML) i Dummy Data</h2>
+            <p>Aquesta funció ens permet agafar dues dades, una data d'inici i una data de fi, i extreu tota la
+                informació de les visites durant el rang de dies escollit. Les salva a un fitxer XML que s'exportarà a
+                la ubicació que triem.</p>
+            <div class="img-block">
+                <img src="img/Imagen23.png" alt="Exportació XML" onclick="openLightbox(this.src)">
+                <div class="img-caption">Fig 10. Selecció de dates i rutes per generar arxius XML</div>
+            </div>
+
+            <h3>Dummy Data (Dades de prova)</h3>
+            <p>Genera milers de dades "Fake" fent servir la llibreria <code>Faker</code> dins la base de dades per fer
+                proves de rendiment, comprovació d'errors o manteniment.</p>
+            <div class="img-block">
+                <img src="img/Imagen25.png" alt="Generar rànkings" onclick="openLightbox(this.src)">
+                <div class="img-caption">Fig 11. Opció per omplir la DB de dades automàtiques</div>
+            </div>
+        </section>
+
+        <section class="doc-section">
+            <h2><i class="fas fa-list-ul"></i> Llibreries i Requisits Tècnics</h2>
+            <ul>
+                <li><strong><code>datetime</code>:</strong> Per manipular dates i hores. Treballant amb visites i
+                    exportacions.</li>
+                <li><strong><code>random</code>:</strong> Mòdul per funcions i operacions pseudoaleatòries.</li>
+                <li><strong><code>faker</code>:</strong> Biblioteca que permet generar dades falses (noms, dates de
+                    naixement, adreces) per als registres pacients.</li>
+                <li><strong><code>psycopg2</code>:</strong> Adaptador de bases de dades per interactuar de forma
+                    impecable amb PostgreSQL.</li>
+                <li><strong><code>etree</code> / <code>lxml</code>:</strong> Per analitzar i crear els resultats
+                    d'exportacions massives com a dades XML.</li>
+                <li><strong><code>Fernet (cryptography)</code>:</strong> Eina de xifrat simètric per protegir la base de
+                    dades d'usuaris (contrasenyes i dades sensibles).</li>
+            </ul>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 <span class="footer-name">Àlex Pica Castro</span> — IPOP · Informe Personal d'Orientació Professional
-        </p>
-        <p style="margin-top: 0.5rem;">
-            <a href="index.html" style="color: var(--accent-secondary); text-decoration: none; font-size: 0.85rem;">
-                <i class="fas fa-arrow-left"></i> Tornar a l'inici
-            </a>
-        </p>
+        <p>© 2026 Àlex Pica Castro — IPOP · Informe Personal d'Orientació Professional</p>
     </footer>
 
     <!-- Lightbox -->
@@ -803,30 +460,7 @@
     </div>
 
     <script>
-        // ===== Mobile Navigation =====
-        function toggleNav() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('active');
-            });
-        });
-
-        // ===== Scroll Reveal =====
-        const revealElements = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        revealElements.forEach(el => observer.observe(el));
-
-        // ===== Lightbox =====
+        // Lightbox
         function openLightbox(src) {
             const lightbox = document.getElementById('lightbox');
             document.getElementById('lightbox-img').src = src;
@@ -841,12 +475,6 @@
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeLightbox();
-        });
-
-        // ===== Navbar background on scroll =====
-        window.addEventListener('scroll', () => {
-            document.getElementById('nav').style.background =
-                window.scrollY > 50 ? 'rgba(10, 14, 23, 0.95)' : 'rgba(10, 14, 23, 0.85)';
         });
     </script>
 </body>
