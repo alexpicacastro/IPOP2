@@ -158,7 +158,7 @@
             letter-spacing: -2px;
         }
 
-        .hero h1 .gradient-text {
+        .hero h1 .accent-text {
             color: var(--accent-secondary);
         }
 
@@ -313,7 +313,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(to bottom, var(--accent-primary), transparent);
+            background: var(--border-card);
         }
 
         .timeline-item {
@@ -330,7 +330,6 @@
             height: 12px;
             border-radius: 50%;
             background: var(--accent-primary);
-            box-shadow: 0 0 10px var(--accent-glow);
         }
 
         .timeline-period {
@@ -376,7 +375,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: var(--gradient-2);
+            background: var(--accent-primary);
         }
 
         .experience-card h3 {
@@ -545,17 +544,17 @@
 
         .bar-native {
             width: 100%;
-            background: var(--gradient-1);
+            background: var(--accent-primary);
         }
 
         .bar-b1 {
             width: 60%;
-            background: var(--gradient-2);
+            background: var(--accent-secondary);
         }
 
         .bar-basic {
             width: 30%;
-            background: var(--gradient-3);
+            background: var(--border-card);
         }
 
         /* ===== Certificates ===== */
@@ -612,7 +611,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: var(--gradient-3);
+            background: var(--border-card);
         }
 
         .objectives-card h3 {
@@ -759,8 +758,7 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: rgba(10, 14, 23, 0.95);
-                backdrop-filter: blur(20px);
+                background: rgba(10, 14, 23, 0.98);
                 flex-direction: column;
                 padding: 1rem;
                 border-bottom: 1px solid var(--border-card);
@@ -836,14 +834,6 @@
 
 <body>
 
-    <!-- Background Effects -->
-    <div class="bg-effects">
-        <div class="bg-orb"></div>
-        <div class="bg-orb"></div>
-        <div class="bg-orb"></div>
-    </div>
-
-    <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">AP</a>
@@ -871,7 +861,7 @@
                     CFGS ASIX — En curs
                 </div>
                 <h1>
-                    Sóc <span class="gradient-text">Àlex Pica Castro</span><br>
+                    Sóc <span class="accent-text">Àlex Pica Castro</span><br>
                     Tècnic en Sistemes
                 </h1>
                 <p class="hero-subtitle">
