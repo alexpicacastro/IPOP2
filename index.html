@@ -14,27 +14,24 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Variables globals de disseny */
+        /* Estil Document / PDF - Estàtic i Pla */
         :root {
-            --bg-primary: #0f172a;    /* Fons principal fosc */
-            --bg-secondary: #1e293b;  /* Fons de les targetes */
-            --bg-card: #1e293b;
-            --border-card: #334155;   /* Vora per defecte */
-            --text-primary: #f8fafc;  /* Text principal blanc */
-            --text-secondary: #94a3b8; /* Text secundari gris */
-            --text-muted: #64748b;    /* Text apagat */
-            --accent-primary: #3b82f6; /* Color blau principal */
-            --accent-secondary: #60a5fa; /* Blau clar */
-            --radius: 8px;
-            --transition: none;       /* Disseny estàtic sense animacions */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --border-card: #e2e8f0;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --accent-primary: #2563eb;
+            --accent-secondary: #3b82f6;
+            --radius: 4px;
         }
 
-        *,
-        *::before,
-        *::after {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            transition: none !important;
+            animation: none !important;
         }
 
         html {
@@ -54,15 +51,20 @@
             display: none;
         }
 
-        /* ===== Navigation ===== */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background: var(--bg-primary);
+        /* Capçalera estàtica simple */
+        .header {
+            padding: 2rem 0;
             border-bottom: 1px solid var(--border-card);
+            margin-bottom: 3rem;
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1.5rem;
         }
 
         .nav-inner {
@@ -98,8 +100,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--text-primary);
-            background: rgba(99, 102, 241, 0.1);
+            text-decoration: underline;
         }
 
         .nav-toggle {
@@ -126,28 +127,8 @@
 
         /* ===== Hero Section ===== */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 80px;
-        }
-
-        .hero-content {}
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            color: var(--accent-secondary);
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
+            padding: 2rem 0;
+            text-align: left;
         }
 
         .hero h1 {
@@ -245,14 +226,14 @@
 
         /* ===== Cards ===== */
         .card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-card);
-            border-radius: var(--radius);
-            padding: 2rem;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-card);
+            padding: 1.5rem 0;
+            margin-bottom: 1rem;
         }
 
         .card:hover {
-            border-color: var(--accent-primary);
+            border-color: var(--border-card);
         }
 
         /* ===== About Section ===== */
@@ -834,23 +815,16 @@
 
 <body>
 
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">AP</a>
-            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">Sobre mi</a></li>
-                <li><a href="#education">Formació</a></li>
-                <li><a href="#experience">Experiència</a></li>
-                <li><a href="#skills">Habilitats</a></li>
-                <li><a href="#certificates">Certificats</a></li>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="nav-logo">Àlex Pica Castro</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inici</a></li>
                 <li><a href="projectes.html">Projectes</a></li>
-                <li><a href="#contact">Contacte</a></li>
+                <li><a href="documentacio.html">Documentació</a></li>
             </ul>
         </div>
-    </nav>
+    </header>
 
     <main>
         <!-- Hero Section -->
@@ -1237,79 +1211,8 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>© 2026 <span class="footer-name">Àlex Pica Castro</span> — IPOP · Informe Personal d'Orientació Professional
-        </p>
+        <p>© 2026 Àlex Pica Castro — IPOP · Informe Personal d'Orientació Professional</p>
     </footer>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <button class="lightbox-close" onclick="closeLightbox()">
-            <i class="fas fa-times"></i>
-        </button>
-        <img id="lightbox-img" src="" alt="CV ampliada">
-    </div>
-
-    <script>
-        // ===== Mobile Navigation =====
-        function toggleNav() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-
-        // Close nav when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('active');
-            });
-        });
-
-        // ===== Scroll Reveal =====
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        revealElements.forEach(el => observer.observe(el));
-
-        // ===== Lightbox =====
-        function openLightbox(src) {
-            const lightbox = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            img.src = src;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // Close with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
-
-        // ===== Navbar background on scroll =====
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(10, 14, 23, 0.95)';
-            } else {
-                nav.style.background = 'rgba(10, 14, 23, 0.85)';
-            }
-        });
-    </script>
 </body>
-
 </html>
